@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		26AC67571EA20AAB006C9B61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AC67561EA20AAB006C9B61 /* AppDelegate.swift */; };
-		26AC67591EA20AAB006C9B61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AC67581EA20AAB006C9B61 /* ViewController.swift */; };
 		26AC675C1EA20AAB006C9B61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26AC675A1EA20AAB006C9B61 /* Main.storyboard */; };
 		26AC675E1EA20AAB006C9B61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26AC675D1EA20AAB006C9B61 /* Assets.xcassets */; };
 		26AC67611EA20AAB006C9B61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26AC675F1EA20AAB006C9B61 /* LaunchScreen.storyboard */; };
@@ -36,7 +35,6 @@
 /* Begin PBXFileReference section */
 		26AC67531EA20AAB006C9B61 /* SinaWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26AC67561EA20AAB006C9B61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		26AC67581EA20AAB006C9B61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		26AC675B1EA20AAB006C9B61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26AC675D1EA20AAB006C9B61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26AC67601EA20AAB006C9B61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -97,8 +95,8 @@
 		26AC67551EA20AAB006C9B61 /* SinaWeiBo */ = {
 			isa = PBXGroup;
 			children = (
+				26AC67841EA20EBA006C9B61 /* Classes */,
 				26AC67561EA20AAB006C9B61 /* AppDelegate.swift */,
-				26AC67581EA20AAB006C9B61 /* ViewController.swift */,
 				26AC675A1EA20AAB006C9B61 /* Main.storyboard */,
 				26AC675D1EA20AAB006C9B61 /* Assets.xcassets */,
 				26AC675F1EA20AAB006C9B61 /* LaunchScreen.storyboard */,
@@ -123,6 +121,53 @@
 				26AC67781EA20AAB006C9B61 /* Info.plist */,
 			);
 			path = SinaWeiBoUITests;
+			sourceTree = "<group>";
+		};
+		26AC67841EA20EBA006C9B61 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				26AC67871EA20EBA006C9B61 /* Main */,
+				26AC67861EA20EBA006C9B61 /* Home */,
+				26AC67851EA20EBA006C9B61 /* Discover */,
+				26AC67881EA20EBA006C9B61 /* Message */,
+				26AC67891EA20EBA006C9B61 /* Profile */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		26AC67851EA20EBA006C9B61 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		26AC67861EA20EBA006C9B61 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		26AC67871EA20EBA006C9B61 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		26AC67881EA20EBA006C9B61 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		26AC67891EA20EBA006C9B61 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +304,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26AC67591EA20AAB006C9B61 /* ViewController.swift in Sources */,
 				26AC67571EA20AAB006C9B61 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,11 +458,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = SinaWeiBo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.caiiiac.SinaWeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -426,11 +473,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = SinaWeiBo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.caiiiac.SinaWeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -507,6 +557,7 @@
 				26AC677D1EA20AAB006C9B61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		26AC677E1EA20AAB006C9B61 /* Build configuration list for PBXNativeTarget "SinaWeiBoTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +566,7 @@
 				26AC67801EA20AAB006C9B61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		26AC67811EA20AAB006C9B61 /* Build configuration list for PBXNativeTarget "SinaWeiBoUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +575,7 @@
 				26AC67831EA20AAB006C9B61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
