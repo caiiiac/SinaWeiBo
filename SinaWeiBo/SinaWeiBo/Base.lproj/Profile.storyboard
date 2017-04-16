@@ -11,7 +11,7 @@
         <!--我-->
         <scene sceneID="R27-sM-lAB">
             <objects>
-                <tableViewController id="I9T-U2-4Vc" sceneMemberID="viewController">
+                <tableViewController id="I9T-U2-4Vc" customClass="ProfileViewController" customModule="SinaWeiBo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="c52-Yf-l1N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,7 +41,7 @@
         <scene sceneID="eI2-Pz-ETA">
             <objects>
                 <navigationController id="UWn-w4-Saq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我" image="tabbar_profile" id="JCp-39-i8i"/>
+                    <tabBarItem key="tabBarItem" title="我" image="tabbar_profile" selectedImage="tabbar_profile_highlighted" id="JCp-39-i8i"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zZR-q5-gHx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -58,5 +58,6 @@
     </scenes>
     <resources>
         <image name="tabbar_profile" width="30" height="30"/>
+        <image name="tabbar_profile_highlighted" width="30" height="30"/>
     </resources>
 </document>

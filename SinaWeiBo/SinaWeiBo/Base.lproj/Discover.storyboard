@@ -41,7 +41,7 @@
         <scene sceneID="s3l-Qb-sSK">
             <objects>
                 <navigationController id="Iet-QQ-sNQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="发现" image="tabbar_discover" id="ktB-aT-AVy"/>
+                    <tabBarItem key="tabBarItem" title="发现" image="tabbar_discover" selectedImage="tabbar_discover_highlighted" id="ktB-aT-AVy"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XJw-4L-Hhr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -58,5 +58,6 @@
     </scenes>
     <resources>
         <image name="tabbar_discover" width="30" height="30"/>
+        <image name="tabbar_discover_highlighted" width="30" height="30"/>
     </resources>
 </document>

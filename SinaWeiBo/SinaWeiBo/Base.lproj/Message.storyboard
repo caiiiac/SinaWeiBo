@@ -41,7 +41,7 @@
         <scene sceneID="rap-QP-Mhy">
             <objects>
                 <navigationController id="bDf-h5-Agn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="消息" image="tabbar_message_center" id="77d-qN-jC7"/>
+                    <tabBarItem key="tabBarItem" title="消息" image="tabbar_message_center" selectedImage="tabbar_discover_highlighted" id="77d-qN-jC7"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Bq-Oj-etd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -57,6 +57,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="tabbar_discover_highlighted" width="30" height="30"/>
         <image name="tabbar_message_center" width="30" height="30"/>
     </resources>
 </document>
