@@ -23,6 +23,7 @@
 		26AC676C1EA20AAB006C9B61 /* SinaWeiBoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AC676B1EA20AAB006C9B61 /* SinaWeiBoTests.swift */; };
 		26AC67771EA20AAB006C9B61 /* SinaWeiBoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AC67761EA20AAB006C9B61 /* SinaWeiBoUITests.swift */; };
 		26AC678B1EA216E7006C9B61 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AC678A1EA216E7006C9B61 /* HomeViewController.swift */; };
+		26BF010F1EA3567C00651A97 /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF010E1EA3567C00651A97 /* UIButton-Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		26AC67761EA20AAB006C9B61 /* SinaWeiBoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinaWeiBoUITests.swift; sourceTree = "<group>"; };
 		26AC67781EA20AAB006C9B61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26AC678A1EA216E7006C9B61 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		26BF010E1EA3567C00651A97 /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				26AC67851EA20EBA006C9B61 /* Discover */,
 				26AC67881EA20EBA006C9B61 /* Message */,
 				26AC67891EA20EBA006C9B61 /* Profile */,
+				26BF010C1EA3565900651A97 /* Tools */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -198,6 +201,22 @@
 				26832EAA1EA25EEB006E088D /* Profile.storyboard */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		26BF010C1EA3565900651A97 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				26BF010D1EA3565900651A97 /* Category */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		26BF010D1EA3565900651A97 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				26BF010E1EA3567C00651A97 /* UIButton-Extension.swift */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26832E931EA25A5A006E088D /* ProfileViewController.swift in Sources */,
+				26BF010F1EA3567C00651A97 /* UIButton-Extension.swift in Sources */,
 				26832E881EA256B3006E088D /* MainViewController.swift in Sources */,
 				26AC67571EA20AAB006C9B61 /* AppDelegate.swift in Sources */,
 				26832E8F1EA25A26006E088D /* MessageViewController.swift in Sources */,
