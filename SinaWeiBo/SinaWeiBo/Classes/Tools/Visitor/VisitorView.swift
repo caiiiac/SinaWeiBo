@@ -17,13 +17,16 @@ class VisitorView: UIView {
     
     @IBOutlet weak var tipLabe: UILabel!
     
+    @IBOutlet weak var registerBtn: UIButton!
+    
+    @IBOutlet weak var loginBtn: UIButton!
+    
     // MARK:- 提供xib创建方法
     class func visitorView() -> VisitorView {
         return Bundle.main.loadNibNamed("VisitorView", owner: nil, options:nil)!.first as! VisitorView
     }
     
     // MARK:- 自定义函数
-    
     func setupVisitorViewInfo(iconName : String, title : String) {
         iconView.image = UIImage(named: iconName)
         tipLabe.text = title
