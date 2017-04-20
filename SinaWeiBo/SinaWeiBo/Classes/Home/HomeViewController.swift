@@ -14,6 +14,8 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        visitorView.addRotationAnim()
     }
 
     override func didReceiveMemoryWarning() {

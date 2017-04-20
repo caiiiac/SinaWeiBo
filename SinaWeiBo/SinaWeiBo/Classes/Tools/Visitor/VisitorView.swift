@@ -10,16 +10,38 @@ import UIKit
 
 class VisitorView: UIView {
 
+    // MARK:- 控件属性
+    @IBOutlet weak var rotationView: UIImageView!
     
+    @IBOutlet weak var iconView: UIImageView!
+    
+    @IBOutlet weak var tipLabe: UILabel!
+    
+    // MARK:- 提供xib创建方法
     class func visitorView() -> VisitorView {
         return Bundle.main.loadNibNamed("VisitorView", owner: nil, options:nil)!.first as! VisitorView
     }
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    // MARK:- 自定义函数
+    
+    func setupVisitorViewInfo(iconName : String, title : String) {
+        iconView.image = UIImage(named: iconName)
+        tipLabe.text = title
+        rotationView.isHidden = true
     }
-    */
-
+    
+    func addRotationAnim() {
+        //创建动画
+        let rotationAnim = CABasicAnimation(keyPath: "transform.rotation.z")
+        
+        //设置动画属性
+        rotationAnim.fromValue = 0
+        rotationAnim.toValue = Double.pi * 2
+        rotationAnim.repeatCount = MAXFLOAT
+        rotationAnim.duration = 5
+        rotationAnim.isRemovedOnCompletion = false
+        
+        //将动画添加到layer
+        rotationView.layer.add(rotationAnim, forKey: nil)
+    }
 }
