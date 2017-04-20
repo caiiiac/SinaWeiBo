@@ -6,4 +6,18 @@
 //  Copyright © 2017年 唐三彩. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+extension UIBarButtonItem {
+    
+    convenience init(imageName : String) {
+        self.init()
+        
+        let btn = UIButton()
+        btn.setImage(UIImage(named : imageName), for: .normal)
+        btn.setImage(UIImage(named : imageName + "_highlighted"), for: .highlighted)
+        btn.sizeToFit()
+        
+        self.customView = btn
+    }
+}
