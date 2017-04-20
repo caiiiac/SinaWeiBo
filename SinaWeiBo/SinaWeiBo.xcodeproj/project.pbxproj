@@ -24,6 +24,9 @@
 		26AC67771EA20AAB006C9B61 /* SinaWeiBoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AC67761EA20AAB006C9B61 /* SinaWeiBoUITests.swift */; };
 		26AC678B1EA216E7006C9B61 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AC678A1EA216E7006C9B61 /* HomeViewController.swift */; };
 		26BF010F1EA3567C00651A97 /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF010E1EA3567C00651A97 /* UIButton-Extension.swift */; };
+		26F4E4931EA851B300CCEF57 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F4E4921EA851B300CCEF57 /* BaseViewController.swift */; };
+		26F4E4951EA852CD00CCEF57 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F4E4941EA852CD00CCEF57 /* VisitorView.swift */; };
+		26F4E4971EA852D900CCEF57 /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26F4E4961EA852D900CCEF57 /* VisitorView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		26AC67781EA20AAB006C9B61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26AC678A1EA216E7006C9B61 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		26BF010E1EA3567C00651A97 /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
+		26F4E4921EA851B300CCEF57 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		26F4E4941EA852CD00CCEF57 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
+		26F4E4961EA852D900CCEF57 /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +212,7 @@
 		26BF010C1EA3565900651A97 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				26F4E4911EA8518500CCEF57 /* Visitor */,
 				26BF010D1EA3565900651A97 /* Category */,
 			);
 			path = Tools;
@@ -217,6 +224,16 @@
 				26BF010E1EA3567C00651A97 /* UIButton-Extension.swift */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		26F4E4911EA8518500CCEF57 /* Visitor */ = {
+			isa = PBXGroup;
+			children = (
+				26F4E4921EA851B300CCEF57 /* BaseViewController.swift */,
+				26F4E4941EA852CD00CCEF57 /* VisitorView.swift */,
+				26F4E4961EA852D900CCEF57 /* VisitorView.xib */,
+			);
+			path = Visitor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +351,7 @@
 				26832EA11EA25D6C006E088D /* Home.storyboard in Resources */,
 				26832EAC1EA25EEB006E088D /* Profile.storyboard in Resources */,
 				26832EA71EA25DA5006E088D /* Discover.storyboard in Resources */,
+				26F4E4971EA852D900CCEF57 /* VisitorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +381,8 @@
 				26832E881EA256B3006E088D /* MainViewController.swift in Sources */,
 				26AC67571EA20AAB006C9B61 /* AppDelegate.swift in Sources */,
 				26832E8F1EA25A26006E088D /* MessageViewController.swift in Sources */,
+				26F4E4931EA851B300CCEF57 /* BaseViewController.swift in Sources */,
+				26F4E4951EA852CD00CCEF57 /* VisitorView.swift in Sources */,
 				26AC678B1EA216E7006C9B61 /* HomeViewController.swift in Sources */,
 				26832E911EA25A45006E088D /* DiscoverViewController.swift in Sources */,
 			);

@@ -10,6 +10,10 @@ import UIKit
 
 class VisitorView: UIView {
 
+    
+    class func visitorView() -> VisitorView {
+        return Bundle.main.loadNibNamed("VisitorView", owner: nil, options:nil)!.first as! VisitorView
+    }
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
