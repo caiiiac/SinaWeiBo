@@ -47,7 +47,22 @@ extension HomeViewController {
 extension HomeViewController{
 
     @objc fileprivate func titleBtnClick() {
+        //改变按钮状态
         titleBtn.isSelected = !titleBtn.isSelected
         
+        //创建弹出控制器
+        let popoverVC = PopoverViewController()
+        popoverVC.modalPresentationStyle = .custom
+        popoverVC.transitioningDelegate = self
+        //弹出控制器
+        present(popoverVC, animated: true, completion: nil)
+        
+    }
+}
+
+//MARK: - UIViewControllerTransitioningDelegate
+extension HomeViewController : UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return SANPresentationController(presentedViewController: presented, presenting: presenting)
     }
 }

@@ -29,6 +29,9 @@
 		26F4E4971EA852D900CCEF57 /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26F4E4961EA852D900CCEF57 /* VisitorView.xib */; };
 		26F4E4991EA88CAE00CCEF57 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F4E4981EA88CAE00CCEF57 /* UIBarButtonItem+Extension.swift */; };
 		26F4E49B1EA8981300CCEF57 /* SANTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F4E49A1EA8981300CCEF57 /* SANTitleButton.swift */; };
+		26F4E49F1EA8A51600CCEF57 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F4E49D1EA8A51600CCEF57 /* PopoverViewController.swift */; };
+		26F4E4A01EA8A51600CCEF57 /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26F4E49E1EA8A51600CCEF57 /* PopoverViewController.xib */; };
+		26F4E4A21EA8ADD300CCEF57 /* SANPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F4E4A11EA8ADD300CCEF57 /* SANPresentationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,9 @@
 		26F4E4961EA852D900CCEF57 /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
 		26F4E4981EA88CAE00CCEF57 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		26F4E49A1EA8981300CCEF57 /* SANTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SANTitleButton.swift; sourceTree = "<group>"; };
+		26F4E49D1EA8A51600CCEF57 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		26F4E49E1EA8A51600CCEF57 /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
+		26F4E4A11EA8ADD300CCEF57 /* SANPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SANPresentationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +187,7 @@
 		26AC67861EA20EBA006C9B61 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				26F4E49C1EA8A4F700CCEF57 /* Popover */,
 				26AC678A1EA216E7006C9B61 /* HomeViewController.swift */,
 				26832E9F1EA25D6C006E088D /* Home.storyboard */,
 			);
@@ -240,6 +247,16 @@
 				26F4E4961EA852D900CCEF57 /* VisitorView.xib */,
 			);
 			path = Visitor;
+			sourceTree = "<group>";
+		};
+		26F4E49C1EA8A4F700CCEF57 /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				26F4E49D1EA8A51600CCEF57 /* PopoverViewController.swift */,
+				26F4E49E1EA8A51600CCEF57 /* PopoverViewController.xib */,
+				26F4E4A11EA8ADD300CCEF57 /* SANPresentationController.swift */,
+			);
+			path = Popover;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +370,7 @@
 				260B3DAB1EA2651A002BEC96 /* Null.storyboard in Resources */,
 				26AC675E1EA20AAB006C9B61 /* Assets.xcassets in Resources */,
 				26832EA41EA25D86006E088D /* Message.storyboard in Resources */,
+				26F4E4A01EA8A51600CCEF57 /* PopoverViewController.xib in Resources */,
 				26AC675C1EA20AAB006C9B61 /* Main.storyboard in Resources */,
 				26832EA11EA25D6C006E088D /* Home.storyboard in Resources */,
 				26832EAC1EA25EEB006E088D /* Profile.storyboard in Resources */,
@@ -386,8 +404,10 @@
 				26BF010F1EA3567C00651A97 /* UIButton-Extension.swift in Sources */,
 				26F4E4991EA88CAE00CCEF57 /* UIBarButtonItem+Extension.swift in Sources */,
 				26832E881EA256B3006E088D /* MainViewController.swift in Sources */,
+				26F4E49F1EA8A51600CCEF57 /* PopoverViewController.swift in Sources */,
 				26AC67571EA20AAB006C9B61 /* AppDelegate.swift in Sources */,
 				26F4E49B1EA8981300CCEF57 /* SANTitleButton.swift in Sources */,
+				26F4E4A21EA8ADD300CCEF57 /* SANPresentationController.swift in Sources */,
 				26832E8F1EA25A26006E088D /* MessageViewController.swift in Sources */,
 				26F4E4931EA851B300CCEF57 /* BaseViewController.swift in Sources */,
 				26F4E4951EA852CD00CCEF57 /* VisitorView.swift in Sources */,
