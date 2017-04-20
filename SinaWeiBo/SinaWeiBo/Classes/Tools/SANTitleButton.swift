@@ -14,7 +14,7 @@ class SANTitleButton: UIButton {
         super.init(frame: frame)
         
         setImage(UIImage(named : "navigationbar_arrow_down"), for: .normal)
-        setImage(UIImage(named : "navigationbar_arrow_up"), for: .highlighted)
+        setImage(UIImage(named : "navigationbar_arrow_up"), for: .selected)
         setTitleColor(UIColor.black, for: .normal)
         sizeToFit()
     }

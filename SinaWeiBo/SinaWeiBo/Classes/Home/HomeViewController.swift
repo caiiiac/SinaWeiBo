@@ -48,6 +48,6 @@ extension HomeViewController{
 
     @objc fileprivate func titleBtnClick() {
         titleBtn.isSelected = !titleBtn.isSelected
-        titleBtn.isHighlighted = !titleBtn.isHighlighted
+        
     }
 }
