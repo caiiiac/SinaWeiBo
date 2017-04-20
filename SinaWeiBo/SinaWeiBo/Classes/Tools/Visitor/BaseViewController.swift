@@ -13,11 +13,12 @@ class BaseViewController: UITableViewController {
     lazy var visitorView : VisitorView = VisitorView.visitorView()
     
     //MARK:- 变量
-    var isLogin : Bool = false
+    var isLogin : Bool = true
     
     override func loadView() {
         isLogin ? super.loadView() : setupVisitorView()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +40,10 @@ extension BaseViewController {
     
     //设置导航栏左右的Item
     func setupNavigationItems() {
+        
+        guard !isLogin else {
+            return
+        }
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(BaseViewController.registerBtnClick))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(BaseViewController.loginBtnClick))
     }

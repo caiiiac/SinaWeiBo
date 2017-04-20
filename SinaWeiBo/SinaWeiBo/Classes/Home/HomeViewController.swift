@@ -10,28 +10,44 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
+    lazy var titleBtn : SANTitleButton = SANTitleButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        visitorView.addRotationAnim()
+        //没有登录时
+        if !isLogin {
+            visitorView.addRotationAnim()
+            return
+        }
+        
+        setupNavigationBar()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+}
+
+//MARK: - 设置UI
+extension HomeViewController {
+    fileprivate func setupNavigationBar() {
+        
+        //左右item
+        navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "navigationbar_friendattention")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop")
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        //titleView
+        titleBtn.setTitle("红茶绅士", for: .normal)
+        titleBtn.addTarget(self, action: #selector(HomeViewController.titleBtnClick), for: .touchUpInside)
+        navigationItem.titleView = titleBtn
     }
-    */
+}
 
+//MARK: - 事件监听
+extension HomeViewController{
+
+    @objc fileprivate func titleBtnClick() {
+        titleBtn.isSelected = !titleBtn.isSelected
+        titleBtn.isHighlighted = !titleBtn.isHighlighted
+    }
 }
