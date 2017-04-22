@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		260B3DAB1EA2651A002BEC96 /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260B3DA91EA2651A002BEC96 /* Null.storyboard */; };
+		2662CEFB1EAAFC8900A1788C /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2662CEFA1EAAFC8900A1788C /* PopoverAnimator.swift */; };
 		26832E881EA256B3006E088D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26832E871EA256B3006E088D /* MainViewController.swift */; };
 		26832E8F1EA25A26006E088D /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26832E8E1EA25A26006E088D /* MessageViewController.swift */; };
 		26832E911EA25A45006E088D /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26832E901EA25A45006E088D /* DiscoverViewController.swift */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		260B3DAA1EA2651A002BEC96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Null.storyboard; sourceTree = "<group>"; };
+		2662CEFA1EAAFC8900A1788C /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 		26832E871EA256B3006E088D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		26832E8E1EA25A26006E088D /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		26832E901EA25A45006E088D /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				26F4E49D1EA8A51600CCEF57 /* PopoverViewController.swift */,
 				26F4E49E1EA8A51600CCEF57 /* PopoverViewController.xib */,
 				26F4E4A11EA8ADD300CCEF57 /* SANPresentationController.swift */,
+				2662CEFA1EAAFC8900A1788C /* PopoverAnimator.swift */,
 			);
 			path = Popover;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				26AC67571EA20AAB006C9B61 /* AppDelegate.swift in Sources */,
 				26F4E49B1EA8981300CCEF57 /* SANTitleButton.swift in Sources */,
 				26F4E4A21EA8ADD300CCEF57 /* SANPresentationController.swift in Sources */,
+				2662CEFB1EAAFC8900A1788C /* PopoverAnimator.swift in Sources */,
 				26832E8F1EA25A26006E088D /* MessageViewController.swift in Sources */,
 				26F4E4931EA851B300CCEF57 /* BaseViewController.swift in Sources */,
 				26F4E4951EA852CD00CCEF57 /* VisitorView.swift in Sources */,

@@ -10,7 +10,9 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
-    lazy var titleBtn : SANTitleButton = SANTitleButton()
+    //MARK: - 属性
+    fileprivate lazy var titleBtn : SANTitleButton = SANTitleButton()
+    fileprivate lazy var popoverAnimator : PopoverAnimator = PopoverAnimator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,17 +54,14 @@ extension HomeViewController{
         
         //创建弹出控制器
         let popoverVC = PopoverViewController()
+        //设置控制器modal样式
         popoverVC.modalPresentationStyle = .custom
-        popoverVC.transitioningDelegate = self
+        //设置转场代理
+        popoverVC.transitioningDelegate = popoverAnimator
+        
         //弹出控制器
         present(popoverVC, animated: true, completion: nil)
         
     }
 }
 
-//MARK: - UIViewControllerTransitioningDelegate
-extension HomeViewController : UIViewControllerTransitioningDelegate {
-    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        return SANPresentationController(presentedViewController: presented, presenting: presenting)
-    }
-}
