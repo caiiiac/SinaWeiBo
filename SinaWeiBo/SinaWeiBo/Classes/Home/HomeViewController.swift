@@ -12,7 +12,11 @@ class HomeViewController: BaseViewController {
 
     //MARK: - 属性
     fileprivate lazy var titleBtn : SANTitleButton = SANTitleButton()
-    fileprivate lazy var popoverAnimator : PopoverAnimator = PopoverAnimator()
+    //注意:在闭包中如果使用当前对象的属性或者调用方法,需要加self
+    //两个地方需要使用self: 1>.函数中出现歧义 2>.闭包中使用当前对象的属性和方法
+    fileprivate lazy var popoverAnimator : PopoverAnimator = PopoverAnimator {[weak self] (isPresented) in
+        self!.titleBtn.isSelected = isPresented
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
