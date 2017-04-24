@@ -58,6 +58,7 @@ extension HomeViewController{
         popoverVC.modalPresentationStyle = .custom
         //设置转场代理
         popoverVC.transitioningDelegate = popoverAnimator
+        popoverAnimator.presentedFrame = CGRect(x: (view.frame.width - 180) * 0.5, y: 55, width: 180, height: 250)
         
         //弹出控制器
         present(popoverVC, animated: true, completion: nil)

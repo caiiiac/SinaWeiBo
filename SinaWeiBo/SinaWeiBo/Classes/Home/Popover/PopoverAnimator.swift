@@ -11,6 +11,8 @@ import UIKit
 class PopoverAnimator: NSObject {
 
     fileprivate var isPresented : Bool = false
+    
+    var presentedFrame : CGRect = CGRect.zero
 }
 
 //MARK: - 自定义转场代理 UIViewControllerTransitioningDelegate
@@ -18,7 +20,10 @@ extension PopoverAnimator : UIViewControllerTransitioningDelegate {
    
     //改变弹出View尺寸
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        return SANPresentationController(presentedViewController: presented, presenting: presenting)
+        let presentation = SANPresentationController(presentedViewController: presented, presenting: presenting)
+        presentation.presentedFrame = presentedFrame
+        
+        return presentation
     }
     
     //自定义弹出动画

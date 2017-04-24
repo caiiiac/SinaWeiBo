@@ -10,13 +10,15 @@ import UIKit
 
 class SANPresentationController: UIPresentationController {
 
+    var presentedFrame : CGRect = CGRect.zero
+    
     fileprivate lazy var coverView : UIView = UIView()
     
     override func containerViewWillLayoutSubviews() {
         super.containerViewWillLayoutSubviews()
         
         //改变frame大小
-        presentedView?.frame = CGRect(x: (containerView!.frame.width - 180) * 0.5, y: 55, width: 180, height: 250)
+        presentedView?.frame = presentedFrame
         
         //添加蒙版
         setupCoverView()
