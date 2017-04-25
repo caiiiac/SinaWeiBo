@@ -13,7 +13,7 @@ class BaseViewController: UITableViewController {
     lazy var visitorView : VisitorView = VisitorView.visitorView()
     
     //MARK:- 变量
-    var isLogin : Bool = true
+    var isLogin : Bool = false
     
     override func loadView() {
         isLogin ? super.loadView() : setupVisitorView()
@@ -24,6 +24,7 @@ class BaseViewController: UITableViewController {
         
         //导航栏添加"注册" "登录"
         setupNavigationItems()
+        
     }
 
 }
@@ -57,6 +58,13 @@ extension BaseViewController {
     }
     
     @objc fileprivate func loginBtnClick()  {
-        print("login")
+        
+        let oauthVc = OAuthViewController()
+        
+        let oauthNav = UINavigationController(rootViewController: oauthVc)
+        
+        present(oauthNav, animated: true, completion: nil)
+        
+    
     }
 }
