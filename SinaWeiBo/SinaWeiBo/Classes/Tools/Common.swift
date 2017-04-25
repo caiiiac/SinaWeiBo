@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+//MARK: - 授权常量
+let app_key = "3113705381"
+let app_secret = "58227f16beae92b0133425e2dafb09e2"
+let redirect_uri = "http://caiiiac.github.io"
