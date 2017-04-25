@@ -59,7 +59,7 @@ extension OAuthViewController {
     
     @objc fileprivate func fillItemClick() {
         //注入js的代码
-        let jsCode = "document.getElementById('userId').value='caiiiac@163.com';document.getElementById('passwd').value='cai402109583';"
+        let jsCode = "document.getElementById('userId').value='@163.com';document.getElementById('passwd').value='';"
         //注入js
         webView.stringByEvaluatingJavaScript(from: jsCode)
     }
