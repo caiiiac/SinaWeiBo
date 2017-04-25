@@ -13,6 +13,7 @@
 		265F8C541EAEFB1000596251 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265F8C531EAEFB1000596251 /* Common.swift */; };
 		265F8C561EAF1ACA00596251 /* SANNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265F8C551EAF1ACA00596251 /* SANNetworkManager.swift */; };
 		265F8C581EAF227E00596251 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265F8C571EAF227E00596251 /* UserAccount.swift */; };
+		265F8C5A1EAF2B5600596251 /* ProfileNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265F8C591EAF2B5600596251 /* ProfileNetwork.swift */; };
 		2662CEFB1EAAFC8900A1788C /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2662CEFA1EAAFC8900A1788C /* PopoverAnimator.swift */; };
 		26832E881EA256B3006E088D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26832E871EA256B3006E088D /* MainViewController.swift */; };
 		26832E8F1EA25A26006E088D /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26832E8E1EA25A26006E088D /* MessageViewController.swift */; };
@@ -68,6 +69,7 @@
 		265F8C531EAEFB1000596251 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		265F8C551EAF1ACA00596251 /* SANNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SANNetworkManager.swift; sourceTree = "<group>"; };
 		265F8C571EAF227E00596251 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		265F8C591EAF2B5600596251 /* ProfileNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNetwork.swift; sourceTree = "<group>"; };
 		2662CEFA1EAAFC8900A1788C /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 		26832E871EA256B3006E088D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		26832E8E1EA25A26006E088D /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 			children = (
 				26832E921EA25A5A006E088D /* ProfileViewController.swift */,
 				26832EAA1EA25EEB006E088D /* Profile.storyboard */,
+				265F8C591EAF2B5600596251 /* ProfileNetwork.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				265F8C511EAEF20C00596251 /* OAuthViewController.swift in Sources */,
 				26F4E49F1EA8A51600CCEF57 /* PopoverViewController.swift in Sources */,
 				26AC67571EA20AAB006C9B61 /* AppDelegate.swift in Sources */,
+				265F8C5A1EAF2B5600596251 /* ProfileNetwork.swift in Sources */,
 				26F4E49B1EA8981300CCEF57 /* SANTitleButton.swift in Sources */,
 				26F4E4A21EA8ADD300CCEF57 /* SANPresentationController.swift in Sources */,
 				265F8C561EAF1ACA00596251 /* SANNetworkManager.swift in Sources */,

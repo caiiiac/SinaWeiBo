@@ -111,9 +111,34 @@ extension OAuthViewController {
             guard let accountDict = result else {
                 return
             }
-            
+            //将字典转成对象
             let account = UserAccount(dict: accountDict)
-            print(account)
+            //请求用户信息
+            self.loadUserInfo(account: account)
+        }
+    }
+    
+    fileprivate func loadUserInfo(account : UserAccount) {
+        guard let accessToken = account.access_token else {
+            return
+        }
+        
+        guard let uid = account.uid else {
+            return
+        }
+        
+        SANNetworkManager.shareInstance.loadUserInfo(accessToken: accessToken, uid: uid) { (result, error) in
+            
+            if error != nil {
+                return
+            }
+            
+            guard let userInfoDict = result else {
+                return
+            }
+            
+            account.screen_name = userInfoDict["screen_name"] as? String
+            account.avatar_large = userInfoDict["avatar_large"] as? String
         }
     }
 }
