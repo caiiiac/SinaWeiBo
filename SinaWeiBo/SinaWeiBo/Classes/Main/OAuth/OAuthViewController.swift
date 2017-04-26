@@ -141,8 +141,17 @@ extension OAuthViewController {
             account.screen_name = userInfoDict["screen_name"] as? String
             account.avatar_large = userInfoDict["avatar_large"] as? String
             
+            //保存用户信息到对象
+            UserAccountManager.shareInstance.account = account
+            
             //将用户信息归档
             NSKeyedArchiver.archiveRootObject(account, toFile: UserAccountManager.shareInstance.accountPath)
+            
+            //显示欢迎界面
+            self.dismiss(animated: true, completion: { 
+                UIApplication.shared.keyWindow?.rootViewController = WelcomeViewController()
+            })
+            
         }
     }
 }

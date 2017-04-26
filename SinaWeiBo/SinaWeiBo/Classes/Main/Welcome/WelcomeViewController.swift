@@ -7,29 +7,45 @@
 //
 
 import UIKit
+import SDWebImage
+
 
 class WelcomeViewController: UIViewController {
-
+    
+    @IBOutlet weak var iconViewCenterCons: NSLayoutConstraint!
+    @IBOutlet weak var iconViewBottomCons: NSLayoutConstraint!
+    
+    @IBOutlet weak var iconView: UIImageView!
+    
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        //设置头像
+        let profileURLString = UserAccountManager.shareInstance.account?.avatar_large
+        // ?? : 如果??前面的可选类型有值,那么将前面的可选类型进行解包并且赋值
+        //如果??前面的可选类型为nil,那么直接使用??后面的值
+        let url = URL(string: profileURLString ?? "")
+        iconView.sd_setImage(with: url, placeholderImage: UIImage(named: "avatar_default_big"))
+        
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        //改变约束
+        iconViewCenterCons.constant = -200
+        
+        //动画
+        //Damping : 阻力系数,阻力越大,弹动效果越不明显
+        //initialSpringVelocity : 初始化速度
+        UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 3, options: [], animations: {
+            self.view.layoutIfNeeded()
+        }) { (_) in
+            UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+        }
     }
-    */
 
 }

@@ -35,6 +35,7 @@ class UserAccountManager {
     
     //MARK: - 重写init函数
     init() {
+        print(accountPath)
         account = NSKeyedUnarchiver.unarchiveObject(withFile: accountPath) as? UserAccount
     }
     
