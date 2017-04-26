@@ -13,7 +13,7 @@ import Foundation
 extension SANNetworkManager {
     func loadUserInfo(accessToken : String, uid : String, finished : @escaping ([String : Any]?, Error?) -> ()) {
         //url
-        let urlString = "http://api.weibo.com/2/users/show.json"
+        let urlString = "https://api.weibo.com/2/users/show.json"
         
         let parameters = ["access_token" : accessToken, "uid" : uid]
         

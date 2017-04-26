@@ -54,6 +54,7 @@ extension OAuthViewController {
 
 extension OAuthViewController {
     @objc fileprivate func closeItemClick() {
+        SVProgressHUD.dismiss()
         dismiss(animated: true, completion: nil)
     }
     
@@ -132,13 +133,19 @@ extension OAuthViewController {
             if error != nil {
                 return
             }
-            
+            //拿到用户信息
             guard let userInfoDict = result else {
                 return
             }
-            
+            //取出妮称 头像
             account.screen_name = userInfoDict["screen_name"] as? String
             account.avatar_large = userInfoDict["avatar_large"] as? String
+            
+            //获取沙盒路径
+            var accountPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+            accountPath = (accountPath as NSString).appendingPathComponent("account.plist")
+            print(accountPath)
+            NSKeyedArchiver.archiveRootObject(account, toFile: accountPath)
         }
     }
 }
