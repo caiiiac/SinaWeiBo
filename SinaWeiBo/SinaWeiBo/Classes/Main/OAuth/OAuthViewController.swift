@@ -137,15 +137,12 @@ extension OAuthViewController {
             guard let userInfoDict = result else {
                 return
             }
-            //取出妮称 头像
+            //取出昵称 头像
             account.screen_name = userInfoDict["screen_name"] as? String
             account.avatar_large = userInfoDict["avatar_large"] as? String
             
-            //获取沙盒路径
-            var accountPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-            accountPath = (accountPath as NSString).appendingPathComponent("account.plist")
-            print(accountPath)
-            NSKeyedArchiver.archiveRootObject(account, toFile: accountPath)
+            //将用户信息归档
+            NSKeyedArchiver.archiveRootObject(account, toFile: UserAccountManager.shareInstance.accountPath)
         }
     }
 }

@@ -23,6 +23,7 @@
 		26832EA41EA25D86006E088D /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26832EA21EA25D86006E088D /* Message.storyboard */; };
 		26832EA71EA25DA5006E088D /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26832EA51EA25DA5006E088D /* Discover.storyboard */; };
 		26832EAC1EA25EEB006E088D /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26832EAA1EA25EEB006E088D /* Profile.storyboard */; };
+		269B9EC61EB06BB800F0E191 /* UserAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269B9EC51EB06BB800F0E191 /* UserAccountManager.swift */; };
 		26AC67571EA20AAB006C9B61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AC67561EA20AAB006C9B61 /* AppDelegate.swift */; };
 		26AC675C1EA20AAB006C9B61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26AC675A1EA20AAB006C9B61 /* Main.storyboard */; };
 		26AC675E1EA20AAB006C9B61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26AC675D1EA20AAB006C9B61 /* Assets.xcassets */; };
@@ -79,6 +80,7 @@
 		26832EA31EA25D86006E088D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Message.storyboard; sourceTree = "<group>"; };
 		26832EA61EA25DA5006E088D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
 		26832EAB1EA25EEB006E088D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
+		269B9EC51EB06BB800F0E191 /* UserAccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountManager.swift; sourceTree = "<group>"; };
 		26AC67531EA20AAB006C9B61 /* SinaWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26AC67561EA20AAB006C9B61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26AC675B1EA20AAB006C9B61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				265F8C4F1EAEF20C00596251 /* OAuthViewController.swift */,
 				265F8C501EAEF20C00596251 /* OAuthViewController.xib */,
 				265F8C571EAF227E00596251 /* UserAccount.swift */,
+				269B9EC51EB06BB800F0E191 /* UserAccountManager.swift */,
 			);
 			path = OAuth;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				26BF010F1EA3567C00651A97 /* UIButton-Extension.swift in Sources */,
 				26F4E4991EA88CAE00CCEF57 /* UIBarButtonItem+Extension.swift in Sources */,
 				26832E881EA256B3006E088D /* MainViewController.swift in Sources */,
+				269B9EC61EB06BB800F0E191 /* UserAccountManager.swift in Sources */,
 				265F8C511EAEF20C00596251 /* OAuthViewController.swift in Sources */,
 				26F4E49F1EA8A51600CCEF57 /* PopoverViewController.swift in Sources */,
 				26AC67571EA20AAB006C9B61 /* AppDelegate.swift in Sources */,

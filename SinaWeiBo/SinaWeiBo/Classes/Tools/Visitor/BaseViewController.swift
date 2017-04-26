@@ -13,21 +13,9 @@ class BaseViewController: UITableViewController {
     lazy var visitorView : VisitorView = VisitorView.visitorView()
     
     //MARK:- 变量
-    var isLogin : Bool = false
+    var isLogin : Bool = UserAccountManager.shareInstance.isLogin
     
     override func loadView() {
-        //沙盒路径
-        var accountPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        accountPath = (accountPath as NSString).appendingPathComponent("account.plist")
-        
-        //读取用户信息
-        let account = NSKeyedUnarchiver.unarchiveObject(withFile: accountPath) as? UserAccount
-        if let account = account {
-            //取出过期日期对比当前是否过期
-            if let expiresDate = account.expires_date {
-                isLogin = expiresDate.compare(Date()) == .orderedDescending
-            }
-        }
         
         isLogin ? super.loadView() : setupVisitorView()
     }
