@@ -12,8 +12,8 @@ import SDWebImage
 
 class WelcomeViewController: UIViewController {
     
+    //约束属性
     @IBOutlet weak var iconViewCenterCons: NSLayoutConstraint!
-    @IBOutlet weak var iconViewBottomCons: NSLayoutConstraint!
     
     @IBOutlet weak var iconView: UIImageView!
     
