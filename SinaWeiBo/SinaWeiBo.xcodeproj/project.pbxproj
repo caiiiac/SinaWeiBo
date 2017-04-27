@@ -26,6 +26,8 @@
 		269B9EC61EB06BB800F0E191 /* UserAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269B9EC51EB06BB800F0E191 /* UserAccountManager.swift */; };
 		269B9ECA1EB0706100F0E191 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269B9EC81EB0706100F0E191 /* WelcomeViewController.swift */; };
 		269B9ECB1EB0706100F0E191 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 269B9EC91EB0706100F0E191 /* WelcomeViewController.xib */; };
+		269B9ECE1EB1C48C00F0E191 /* HomeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269B9ECD1EB1C48C00F0E191 /* HomeNetwork.swift */; };
+		269B9ED11EB1CFAA00F0E191 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269B9ED01EB1CFAA00F0E191 /* Status.swift */; };
 		26AC67571EA20AAB006C9B61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AC67561EA20AAB006C9B61 /* AppDelegate.swift */; };
 		26AC675C1EA20AAB006C9B61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26AC675A1EA20AAB006C9B61 /* Main.storyboard */; };
 		26AC675E1EA20AAB006C9B61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26AC675D1EA20AAB006C9B61 /* Assets.xcassets */; };
@@ -85,6 +87,8 @@
 		269B9EC51EB06BB800F0E191 /* UserAccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountManager.swift; sourceTree = "<group>"; };
 		269B9EC81EB0706100F0E191 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		269B9EC91EB0706100F0E191 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		269B9ECD1EB1C48C00F0E191 /* HomeNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeNetwork.swift; sourceTree = "<group>"; };
+		269B9ED01EB1CFAA00F0E191 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		26AC67531EA20AAB006C9B61 /* SinaWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26AC67561EA20AAB006C9B61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26AC675B1EA20AAB006C9B61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -175,6 +179,22 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		269B9ECC1EB1C45700F0E191 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				269B9ECD1EB1C48C00F0E191 /* HomeNetwork.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		269B9ECF1EB1CDA400F0E191 /* HomeModel */ = {
+			isa = PBXGroup;
+			children = (
+				269B9ED01EB1CFAA00F0E191 /* Status.swift */,
+			);
+			path = HomeModel;
+			sourceTree = "<group>";
+		};
 		26AC674A1EA20AAB006C9B61 = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +274,8 @@
 		26AC67861EA20EBA006C9B61 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				269B9ECF1EB1CDA400F0E191 /* HomeModel */,
+				269B9ECC1EB1C45700F0E191 /* API */,
 				26F4E49C1EA8A4F700CCEF57 /* Popover */,
 				26AC678A1EA216E7006C9B61 /* HomeViewController.swift */,
 				26832E9F1EA25D6C006E088D /* Home.storyboard */,
@@ -638,6 +660,7 @@
 				265F8C541EAEFB1000596251 /* Common.swift in Sources */,
 				26832E931EA25A5A006E088D /* ProfileViewController.swift in Sources */,
 				265F8C581EAF227E00596251 /* UserAccount.swift in Sources */,
+				269B9ECE1EB1C48C00F0E191 /* HomeNetwork.swift in Sources */,
 				26BF010F1EA3567C00651A97 /* UIButton-Extension.swift in Sources */,
 				26F4E4991EA88CAE00CCEF57 /* UIBarButtonItem+Extension.swift in Sources */,
 				26832E881EA256B3006E088D /* MainViewController.swift in Sources */,
@@ -651,6 +674,7 @@
 				26F4E4A21EA8ADD300CCEF57 /* SANPresentationController.swift in Sources */,
 				265F8C561EAF1ACA00596251 /* SANNetworkManager.swift in Sources */,
 				2662CEFB1EAAFC8900A1788C /* PopoverAnimator.swift in Sources */,
+				269B9ED11EB1CFAA00F0E191 /* Status.swift in Sources */,
 				26832E8F1EA25A26006E088D /* MessageViewController.swift in Sources */,
 				26F4E4931EA851B300CCEF57 /* BaseViewController.swift in Sources */,
 				26F4E4951EA852CD00CCEF57 /* VisitorView.swift in Sources */,

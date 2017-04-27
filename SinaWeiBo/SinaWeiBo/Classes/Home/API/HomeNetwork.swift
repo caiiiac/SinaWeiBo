@@ -7,3 +7,28 @@
 //
 
 import Foundation
+
+
+//MARK: - 首页数据
+extension SANNetworkManager {
+    
+    func loadStatuses(finished : @escaping ([[String : Any]]?, Error?) -> ()) {
+        //url
+        //公共接口:https://api.weibo.com/2/statuses/public_timeline.json
+        //个人关注:https://api.weibo.com/2/statuses/home_timeline.json
+        let urlString = "https://api.weibo.com/2/statuses/public_timeline.json"
+        //参数
+        let parameters = ["access_token" : (UserAccountManager.shareInstance.account?.access_token)!]
+        //发送请求
+        request(methodType: .GET, urlString: urlString, parameters: parameters) { (result, error) in
+            //获取字典
+            guard let resultDict = result as? [String : Any] else {
+                finished(nil, error)
+                return
+            }
+            //将数据回调
+            finished(resultDict["statuses"] as? [[String : Any]], error)
+        }
+        
+    }
+}

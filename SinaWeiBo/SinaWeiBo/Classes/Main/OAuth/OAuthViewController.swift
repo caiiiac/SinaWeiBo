@@ -105,7 +105,6 @@ extension OAuthViewController {
         SANNetworkManager.shareInstance.loadAccessToken(code: code) { (result, error) in
             
             if error != nil {
-                print(error!)
                 return
             }
             

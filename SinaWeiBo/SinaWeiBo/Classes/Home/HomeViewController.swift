@@ -18,6 +18,8 @@ class HomeViewController: BaseViewController {
         self!.titleBtn.isSelected = isPresented
     }
     
+    fileprivate lazy var statuses : [Status] = [Status]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,8 +30,10 @@ class HomeViewController: BaseViewController {
             visitorView.addRotationAnim()
             return
         }
-        
+        //设置导航
         setupNavigationBar()
+        //请求数据
+        loadStatuses()
     }
 
 }
@@ -67,6 +71,47 @@ extension HomeViewController{
         //弹出控制器
         present(popoverVC, animated: true, completion: nil)
         
+    }
+}
+
+//MARK: - 数据请求
+extension HomeViewController {
+    fileprivate func loadStatuses() {
+        SANNetworkManager.shareInstance.loadStatuses { (result, error) in
+            if error != nil {
+                return
+            }
+            //获取数据
+            guard let resultArray = result else {
+                return
+            }
+            //添加数据到Array
+            for statusDict in resultArray {
+                let status = Status(dict: statusDict)
+                self.statuses.append(status)
+            }
+            
+            //刷新tableView
+            self.tableView.reloadData()
+        }
+    }
+}
+
+//MARK: - tableView代理
+extension HomeViewController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return statuses.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeStatusCell")!
+        
+        let status = statuses[indexPath.row]
+        
+        cell.textLabel?.text = status.text
+        
+        return cell
     }
 }
 
