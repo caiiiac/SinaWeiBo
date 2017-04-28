@@ -39,6 +39,9 @@ class Status: NSObject {
     var text : String?              //正文
     var mid : Int  = 0              //ID
     
+    var user : User?
+    
+    
     //数据处理后得到的属性
     var sourceText : String?
     var createAtText : String?
@@ -49,6 +52,10 @@ class Status: NSObject {
         super.init()
         
         setValuesForKeys(dict)
+        //用户字典转model
+        if let userDict = dict["user"] as? [String : Any] {
+            user = User(dict: userDict)
+        }
     }
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {}

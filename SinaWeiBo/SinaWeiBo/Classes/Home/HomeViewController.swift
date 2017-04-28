@@ -89,7 +89,7 @@ extension HomeViewController {
             for statusDict in resultArray {
                 let status = Status(dict: statusDict)
                 self.statuses.append(status)
-                print("来源:\(status.sourceText!)----时间:\(status.createAtText!)")
+                print("来源:\(status.sourceText!)----时间:\(status.createAtText!)----博主:\((status.user?.screen_name)!)")
             }
             
             //刷新tableView
