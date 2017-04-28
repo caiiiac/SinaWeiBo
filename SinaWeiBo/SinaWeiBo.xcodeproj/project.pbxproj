@@ -28,6 +28,7 @@
 		269B9ECB1EB0706100F0E191 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 269B9EC91EB0706100F0E191 /* WelcomeViewController.xib */; };
 		269B9ECE1EB1C48C00F0E191 /* HomeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269B9ECD1EB1C48C00F0E191 /* HomeNetwork.swift */; };
 		269B9ED11EB1CFAA00F0E191 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269B9ED01EB1CFAA00F0E191 /* Status.swift */; };
+		269B9ED31EB2DFA600F0E191 /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269B9ED21EB2DFA600F0E191 /* NSDate-Extension.swift */; };
 		26AC67571EA20AAB006C9B61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AC67561EA20AAB006C9B61 /* AppDelegate.swift */; };
 		26AC675C1EA20AAB006C9B61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26AC675A1EA20AAB006C9B61 /* Main.storyboard */; };
 		26AC675E1EA20AAB006C9B61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26AC675D1EA20AAB006C9B61 /* Assets.xcassets */; };
@@ -89,6 +90,7 @@
 		269B9EC91EB0706100F0E191 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		269B9ECD1EB1C48C00F0E191 /* HomeNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeNetwork.swift; sourceTree = "<group>"; };
 		269B9ED01EB1CFAA00F0E191 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		269B9ED21EB2DFA600F0E191 /* NSDate-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
 		26AC67531EA20AAB006C9B61 /* SinaWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26AC67561EA20AAB006C9B61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26AC675B1EA20AAB006C9B61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 			children = (
 				26BF010E1EA3567C00651A97 /* UIButton-Extension.swift */,
 				26F4E4981EA88CAE00CCEF57 /* UIBarButtonItem+Extension.swift */,
+				269B9ED21EB2DFA600F0E191 /* NSDate-Extension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -667,6 +670,7 @@
 				269B9ECA1EB0706100F0E191 /* WelcomeViewController.swift in Sources */,
 				269B9EC61EB06BB800F0E191 /* UserAccountManager.swift in Sources */,
 				265F8C511EAEF20C00596251 /* OAuthViewController.swift in Sources */,
+				269B9ED31EB2DFA600F0E191 /* NSDate-Extension.swift in Sources */,
 				26F4E49F1EA8A51600CCEF57 /* PopoverViewController.swift in Sources */,
 				26AC67571EA20AAB006C9B61 /* AppDelegate.swift in Sources */,
 				265F8C5A1EAF2B5600596251 /* ProfileNetwork.swift in Sources */,
