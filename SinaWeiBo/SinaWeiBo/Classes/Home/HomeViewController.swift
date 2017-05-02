@@ -90,7 +90,7 @@ extension HomeViewController {
                 let status = Status(dict: statusDict)
                 let viewModel = StatusViewModel(status: status)
                 self.viewModels.append(viewModel)
-                print("来源:\(viewModel.sourceText!)----时间:\(viewModel.createAtText!)----博主:\((viewModel.status?.user?.screen_name)!)")
+                dprint("来源:\(viewModel.sourceText!)----时间:\(viewModel.createAtText!)----博主:\((viewModel.status?.user?.screen_name)!)")
             }
             
             //刷新tableView

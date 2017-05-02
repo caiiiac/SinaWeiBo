@@ -58,3 +58,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+
+
+
+func dprint<T>(_ message: T, file : String = #file, lineNum : Int = #line) {
+    #if DEBUG
+        
+        let fileName = (file as NSString).lastPathComponent
+        print("\(fileName)(\(lineNum)):\(message)");
+        
+    #endif
+}
+
