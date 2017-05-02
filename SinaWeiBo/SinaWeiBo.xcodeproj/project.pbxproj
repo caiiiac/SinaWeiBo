@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		260B3DAB1EA2651A002BEC96 /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260B3DA91EA2651A002BEC96 /* Null.storyboard */; };
+		264F74131EB827B10043002F /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264F74121EB827B10043002F /* StatusViewModel.swift */; };
 		265F8C511EAEF20C00596251 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265F8C4F1EAEF20C00596251 /* OAuthViewController.swift */; };
 		265F8C521EAEF20C00596251 /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 265F8C501EAEF20C00596251 /* OAuthViewController.xib */; };
 		265F8C541EAEFB1000596251 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265F8C531EAEFB1000596251 /* Common.swift */; };
@@ -71,6 +72,7 @@
 /* Begin PBXFileReference section */
 		0AE674DF7EDA632A14DDAD61 /* Pods-SinaWeiBoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWeiBoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWeiBoTests/Pods-SinaWeiBoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		260B3DAA1EA2651A002BEC96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Null.storyboard; sourceTree = "<group>"; };
+		264F74121EB827B10043002F /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		265F8C4F1EAEF20C00596251 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		265F8C501EAEF20C00596251 /* OAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
 		265F8C531EAEFB1000596251 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			children = (
 				269B9ED01EB1CFAA00F0E191 /* Status.swift */,
 				269B9ED41EB2EB5900F0E191 /* User.swift */,
+				264F74121EB827B10043002F /* StatusViewModel.swift */,
 			);
 			path = HomeModel;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				264F74131EB827B10043002F /* StatusViewModel.swift in Sources */,
 				265F8C541EAEFB1000596251 /* Common.swift in Sources */,
 				26832E931EA25A5A006E088D /* ProfileViewController.swift in Sources */,
 				265F8C581EAF227E00596251 /* UserAccount.swift in Sources */,

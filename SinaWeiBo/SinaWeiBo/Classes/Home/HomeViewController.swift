@@ -18,7 +18,7 @@ class HomeViewController: BaseViewController {
         self!.titleBtn.isSelected = isPresented
     }
     
-    fileprivate lazy var statuses : [Status] = [Status]()
+    fileprivate lazy var viewModels : [StatusViewModel] = [StatusViewModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,8 +88,9 @@ extension HomeViewController {
             //添加数据到Array
             for statusDict in resultArray {
                 let status = Status(dict: statusDict)
-                self.statuses.append(status)
-                print("来源:\(status.sourceText!)----时间:\(status.createAtText!)----博主:\((status.user?.screen_name)!)")
+                let viewModel = StatusViewModel(status: status)
+                self.viewModels.append(viewModel)
+                print("来源:\(viewModel.sourceText!)----时间:\(viewModel.createAtText!)----博主:\((viewModel.status?.user?.screen_name)!)")
             }
             
             //刷新tableView
@@ -101,16 +102,16 @@ extension HomeViewController {
 //MARK: - tableView代理
 extension HomeViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return statuses.count
+        return viewModels.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeStatusCell")!
         
-        let status = statuses[indexPath.row]
+        let viewModel = viewModels[indexPath.row]
         
-        cell.textLabel?.text = status.text
+        cell.textLabel?.text = viewModel.status?.text
         
         return cell
     }
