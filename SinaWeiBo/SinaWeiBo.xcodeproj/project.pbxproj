@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		260B3DAB1EA2651A002BEC96 /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260B3DA91EA2651A002BEC96 /* Null.storyboard */; };
 		264F74131EB827B10043002F /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264F74121EB827B10043002F /* StatusViewModel.swift */; };
+		264F74161EB8630E0043002F /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264F74151EB8630E0043002F /* HomeViewCell.swift */; };
 		265F8C511EAEF20C00596251 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265F8C4F1EAEF20C00596251 /* OAuthViewController.swift */; };
 		265F8C521EAEF20C00596251 /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 265F8C501EAEF20C00596251 /* OAuthViewController.xib */; };
 		265F8C541EAEFB1000596251 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265F8C531EAEFB1000596251 /* Common.swift */; };
@@ -73,6 +74,7 @@
 		0AE674DF7EDA632A14DDAD61 /* Pods-SinaWeiBoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWeiBoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWeiBoTests/Pods-SinaWeiBoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		260B3DAA1EA2651A002BEC96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Null.storyboard; sourceTree = "<group>"; };
 		264F74121EB827B10043002F /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
+		264F74151EB8630E0043002F /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		265F8C4F1EAEF20C00596251 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		265F8C501EAEF20C00596251 /* OAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
 		265F8C531EAEFB1000596251 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -163,6 +165,14 @@
 				B148B58612FFDD3DA8C14C59 /* Pods_SinaWeiBoUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		264F74141EB862F40043002F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				264F74151EB8630E0043002F /* HomeViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		265F8C4E1EAEF1EE00596251 /* OAuth */ = {
@@ -285,6 +295,7 @@
 				269B9ECF1EB1CDA400F0E191 /* HomeModel */,
 				269B9ECC1EB1C45700F0E191 /* API */,
 				26F4E49C1EA8A4F700CCEF57 /* Popover */,
+				264F74141EB862F40043002F /* Cell */,
 				26AC678A1EA216E7006C9B61 /* HomeViewController.swift */,
 				26832E9F1EA25D6C006E088D /* Home.storyboard */,
 			);
@@ -674,6 +685,7 @@
 				269B9ECE1EB1C48C00F0E191 /* HomeNetwork.swift in Sources */,
 				26BF010F1EA3567C00651A97 /* UIButton-Extension.swift in Sources */,
 				26F4E4991EA88CAE00CCEF57 /* UIBarButtonItem+Extension.swift in Sources */,
+				264F74161EB8630E0043002F /* HomeViewCell.swift in Sources */,
 				26832E881EA256B3006E088D /* MainViewController.swift in Sources */,
 				269B9ECA1EB0706100F0E191 /* WelcomeViewController.swift in Sources */,
 				269B9EC61EB06BB800F0E191 /* UserAccountManager.swift in Sources */,

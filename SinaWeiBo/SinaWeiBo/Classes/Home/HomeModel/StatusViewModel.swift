@@ -18,6 +18,7 @@ class StatusViewModel: NSObject {
     var createAtText : String?      //时间
     var verifiedImage : UIImage?    //认证图标
     var vipImage : UIImage?         //会员等级
+    var profileURL : URL?
     
     
     //MARK: - 构造函数
@@ -31,7 +32,7 @@ class StatusViewModel: NSObject {
             let startIndex = (source as NSString).range(of: ">").location + 1
             let length = (source as NSString).range(of: "</").location - startIndex
             //截取字符串
-            sourceText = (source as NSString).substring(with: NSRange(location: startIndex, length: length))
+            sourceText = "来自" + (source as NSString).substring(with: NSRange(location: startIndex, length: length))
         }
 
         //处理时间
@@ -58,6 +59,10 @@ class StatusViewModel: NSObject {
         if mbrank > 0 && mbrank < 7 {
             vipImage = UIImage(named: "common_icon_membership_level\(mbrank)")
         }
+        
+        //处理用户头像
+        let profileURLString = status.user?.profile_image_url ?? ""
+        profileURL = URL(string: profileURLString)
         
     }
 }

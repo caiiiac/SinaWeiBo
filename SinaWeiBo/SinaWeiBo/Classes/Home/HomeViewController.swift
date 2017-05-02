@@ -34,6 +34,10 @@ class HomeViewController: BaseViewController {
         setupNavigationBar()
         //请求数据
         loadStatuses()
+        
+        //设置cell自动适配高度
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 150
     }
 
 }
@@ -107,11 +111,9 @@ extension HomeViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeStatusCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeStatusCell") as! HomeViewCell
         
-        let viewModel = viewModels[indexPath.row]
-        
-        cell.textLabel?.text = viewModel.status?.text
+        cell.viewModel = viewModels[indexPath.row]
         
         return cell
     }
