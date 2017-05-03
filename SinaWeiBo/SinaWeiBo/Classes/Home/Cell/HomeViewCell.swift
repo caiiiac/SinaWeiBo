@@ -9,7 +9,8 @@
 import UIKit
 import SDWebImage
 
-//private let edgeMargin : CGFloat = 15
+fileprivate let edgeMargin : CGFloat = 15
+fileprivate let itemMargin : CGFloat = 10
 
 class HomeViewCell: UITableViewCell {
 
@@ -28,9 +29,13 @@ class HomeViewCell: UITableViewCell {
     @IBOutlet weak var verifiedView: UIImageView!
     //头像
     @IBOutlet weak var iconImageView: UIImageView!
+    //配图view
+    @IBOutlet weak var picCollectionView: PicCollectionView!
     
     
     //MARK: - 约束属性
+    @IBOutlet weak var picViewWCons: NSLayoutConstraint!
+    @IBOutlet weak var picViewHCons: NSLayoutConstraint!
 //    @IBOutlet weak var contentLabelWCons: NSLayoutConstraint!
     
     var viewModel : StatusViewModel? {
@@ -54,6 +59,12 @@ class HomeViewCell: UITableViewCell {
             //微博正文
             contentLabel.text = viewModel.status?.text
             
+            //计算picView的宽高
+            let picViewSize = calculatePicViewSize(count: viewModel.picURLs.count)
+            picViewWCons.constant = picViewSize.width
+            picViewHCons.constant = picViewSize.height
+            
+            picCollectionView.picURLs = viewModel.picURLs
         }
     }
     
@@ -65,6 +76,9 @@ class HomeViewCell: UITableViewCell {
         //微博正文宽度约束
 //        contentLabelWCons.constant = UIScreen.main.bounds.width - 2 * edgeMargin
         
+        let layout = picCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let imageWH = (UIScreen.main.bounds.width - 2 * edgeMargin - 2 * itemMargin) / 3.0
+        layout.itemSize = CGSize(width: imageWH, height: imageWH)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -73,4 +87,32 @@ class HomeViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+
+//MARK: - 高度计算
+extension HomeViewCell {
+    fileprivate func calculatePicViewSize(count : Int) -> CGSize {
+        //没有配图
+        if count == 0 {
+            return CGSize.zero
+        }
+        
+        //计算imageWH
+        let imageWH = (UIScreen.main.bounds.width - 2 * edgeMargin - 2 * itemMargin) / 3.0
+        
+        //四张配图
+        if count == 4 {
+            let picWH = imageWH * 2 + itemMargin
+            return CGSize(width: picWH, height: picWH)
+        }
+        
+        //其它数量配图
+        //计算行数
+        let rows = CGFloat((count - 1) / 3 + 1)
+        //picView的宽高
+        let picViewH = rows * imageWH + (rows - 1) * itemMargin
+        let picViewW = UIScreen.main.bounds.width - 2 * edgeMargin
+        
+        return CGSize(width: picViewW, height: picViewH)
+    }
 }

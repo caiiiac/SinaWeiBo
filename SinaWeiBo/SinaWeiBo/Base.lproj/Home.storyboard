@@ -13,16 +13,16 @@
         <scene sceneID="Jdc-jX-YLT">
             <objects>
                 <tableViewController id="Udh-AL-OvM" customClass="HomeViewController" customModule="SinaWeiBo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="160" sectionHeaderHeight="28" sectionFooterHeight="28" id="l9B-w9-Jcg">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="268" sectionHeaderHeight="28" sectionFooterHeight="28" id="l9B-w9-Jcg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HomeStatusCell" rowHeight="160" id="m2x-id-Zai" customClass="HomeViewCell" customModule="SinaWeiBo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="160"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HomeStatusCell" rowHeight="268" id="m2x-id-Zai" customClass="HomeViewCell" customModule="SinaWeiBo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="268"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m2x-id-Zai" id="8d3-c5-nFi">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="268"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default_small" translatesAutoresizingMaskIntoConstraints="NO" id="KzV-pF-MVg">
@@ -63,13 +63,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微博" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahF-1e-kfC">
-                                            <rect key="frame" x="15" y="65" width="337" height="44.5"/>
+                                            <rect key="frame" x="15" y="65" width="337" height="43"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ye-nw-c3v">
-                                            <rect key="frame" x="0.0" y="119.5" width="375" height="40"/>
+                                            <rect key="frame" x="0.0" y="228" width="375" height="40"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1K-bB-87B">
                                                     <rect key="frame" x="0.0" y="1" width="125" height="32"/>
@@ -141,9 +141,47 @@
                                                 <constraint firstItem="1bt-S1-vaV" firstAttribute="leading" secondItem="bEz-ZU-zDZ" secondAttribute="leading" id="vjW-Y2-GEA"/>
                                             </constraints>
                                         </view>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="k1A-Zr-44K" customClass="PicCollectionView" customModule="SinaWeiBo" customModuleProvider="target">
+                                            <rect key="frame" x="15" y="118" width="240" height="100"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="240" id="Oq5-cM-kkC"/>
+                                                <constraint firstAttribute="height" constant="100" id="qcU-ZN-XP3"/>
+                                            </constraints>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QsI-9D-O0W">
+                                                <size key="itemSize" width="50" height="50"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomePicCell" id="Pbl-sI-JEi" customClass="PicCollectionViewCell" customModule="SinaWeiBo" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u9b-mi-Zlw">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstItem="u9b-mi-Zlw" firstAttribute="top" secondItem="Pbl-sI-JEi" secondAttribute="top" id="7ou-45-NWs"/>
+                                                        <constraint firstAttribute="bottom" secondItem="u9b-mi-Zlw" secondAttribute="bottom" id="H9j-9Z-4wO"/>
+                                                        <constraint firstItem="u9b-mi-Zlw" firstAttribute="leading" secondItem="Pbl-sI-JEi" secondAttribute="leading" id="pWq-Ec-iBY"/>
+                                                        <constraint firstAttribute="trailing" secondItem="u9b-mi-Zlw" secondAttribute="trailing" id="qTL-wz-22B"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="iconView" destination="u9b-mi-Zlw" id="bpw-XL-wbl"/>
+                                                    </connections>
+                                                </collectionViewCell>
+                                            </cells>
+                                        </collectionView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="4Ye-nw-c3v" firstAttribute="top" secondItem="ahF-1e-kfC" secondAttribute="bottom" constant="10" id="7zD-lQ-0Zl"/>
+                                        <constraint firstItem="k1A-Zr-44K" firstAttribute="leading" secondItem="KzV-pF-MVg" secondAttribute="leading" id="1iW-63-edG"/>
                                         <constraint firstItem="cac-eb-5Jy" firstAttribute="leading" secondItem="KzV-pF-MVg" secondAttribute="trailing" constant="15" id="CJZ-pN-NMb"/>
                                         <constraint firstItem="ahF-1e-kfC" firstAttribute="top" secondItem="dFU-ST-245" secondAttribute="bottom" constant="15" id="CPk-LW-czb"/>
                                         <constraint firstItem="mVZ-X0-fYx" firstAttribute="leading" secondItem="cac-eb-5Jy" secondAttribute="leading" id="DDb-Ck-NaB"/>
@@ -157,16 +195,21 @@
                                         <constraint firstItem="dFU-ST-245" firstAttribute="bottom" secondItem="KzV-pF-MVg" secondAttribute="bottom" id="dlc-Cd-rdz"/>
                                         <constraint firstAttribute="bottom" secondItem="4Ye-nw-c3v" secondAttribute="bottom" id="ebW-Ev-VWC"/>
                                         <constraint firstItem="dFU-ST-245" firstAttribute="trailing" secondItem="KzV-pF-MVg" secondAttribute="trailing" id="f54-ea-LMU"/>
+                                        <constraint firstItem="k1A-Zr-44K" firstAttribute="top" secondItem="ahF-1e-kfC" secondAttribute="bottom" constant="10" id="pr7-rE-0YB"/>
                                         <constraint firstItem="hkf-XC-7qJ" firstAttribute="leading" secondItem="cac-eb-5Jy" secondAttribute="trailing" constant="10" id="t7o-Yr-Icx"/>
                                         <constraint firstItem="cac-eb-5Jy" firstAttribute="top" secondItem="KzV-pF-MVg" secondAttribute="top" id="tEa-B3-yHM"/>
                                         <constraint firstItem="igT-Rb-OQa" firstAttribute="top" secondItem="mVZ-X0-fYx" secondAttribute="top" id="tlH-eO-nfB"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="ahF-1e-kfC" secondAttribute="trailing" constant="15" id="vMi-eU-Qdo"/>
+                                        <constraint firstItem="4Ye-nw-c3v" firstAttribute="top" secondItem="k1A-Zr-44K" secondAttribute="bottom" priority="750" constant="10" id="wtd-IT-Ww0"/>
                                         <constraint firstItem="ahF-1e-kfC" firstAttribute="leading" secondItem="KzV-pF-MVg" secondAttribute="leading" id="yP8-VT-8dT"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="contentLabel" destination="ahF-1e-kfC" id="dhV-5C-GEy"/>
                                     <outlet property="iconImageView" destination="KzV-pF-MVg" id="Edv-0N-hvJ"/>
+                                    <outlet property="picCollectionView" destination="k1A-Zr-44K" id="wKk-FJ-b7o"/>
+                                    <outlet property="picViewHCons" destination="qcU-ZN-XP3" id="hpE-DW-Cjf"/>
+                                    <outlet property="picViewWCons" destination="Oq5-cM-kkC" id="cEf-hL-VA1"/>
                                     <outlet property="screenNameLabel" destination="cac-eb-5Jy" id="crH-5q-qv6"/>
                                     <outlet property="sourceLabel" destination="igT-Rb-OQa" id="t0y-4V-Rzr"/>
                                     <outlet property="timeLabel" destination="mVZ-X0-fYx" id="1bJ-YP-htc"/>

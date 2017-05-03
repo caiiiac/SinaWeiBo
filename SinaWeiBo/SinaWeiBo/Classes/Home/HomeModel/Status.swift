@@ -11,12 +11,15 @@ import UIKit
 class Status: NSObject {
     
     //MARK: - 属性
-    var created_at : String?       //创建时间
-    var source : String?          //来源
+    var created_at : String?        //创建时间
+    var source : String?            //来源
     var text : String?              //正文
     var mid : Int  = 0              //ID
     
+    //发微博的用户
     var user : User?
+    //微博配图
+    var pic_urls : [[String : String]]?
     
     
     

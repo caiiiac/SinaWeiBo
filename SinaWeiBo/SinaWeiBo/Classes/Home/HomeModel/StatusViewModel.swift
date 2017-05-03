@@ -14,11 +14,18 @@ class StatusViewModel: NSObject {
     var status : Status?
     
     //对数据处理的属性
-    var sourceText : String?        //来源
-    var createAtText : String?      //时间
-    var verifiedImage : UIImage?    //认证图标
-    var vipImage : UIImage?         //会员等级
+    //来源
+    var sourceText : String?
+    //时间
+    var createAtText : String?
+    //认证图标
+    var verifiedImage : UIImage?
+    //会员等级图标
+    var vipImage : UIImage?
+    //用户头像URL
     var profileURL : URL?
+    //配图数据
+    var picURLs : [URL] = [URL]()
     
     
     //MARK: - 构造函数
@@ -64,5 +71,13 @@ class StatusViewModel: NSObject {
         let profileURLString = status.user?.profile_image_url ?? ""
         profileURL = URL(string: profileURLString)
         
+        if let picURLDicts = status.pic_urls {
+            for picURLDict in picURLDicts {
+                guard let picURLString = picURLDict["thumbnail_pic"] else {
+                    continue
+                }
+                picURLs.append(URL(string: picURLString)!)
+            }
+        }
     }
 }

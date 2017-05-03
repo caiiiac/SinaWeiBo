@@ -7,15 +7,52 @@
 //
 
 import UIKit
+import SDWebImage
+
 
 class PicCollectionView: UICollectionView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    var picURLs : [URL] = [URL]() {
+        didSet {
+            self.reloadData()
+        }
     }
-    */
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        dataSource = self
+    }
+}
 
+
+//MARK: - DataSource方法
+extension PicCollectionView : UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return picURLs.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomePicCell", for: indexPath) as! PicCollectionViewCell
+        cell.picURL = picURLs[indexPath.item]
+        return cell
+    }
+}
+
+
+class PicCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var iconView: UIImageView!
+    
+    var picURL : URL? {
+        didSet {
+            guard let picURL = picURL else {
+                return
+            }
+            iconView.sd_setImage(with: picURL, placeholderImage: UIImage(named: "empty_picture"))
+        }
+    }
+    
+    
 }
