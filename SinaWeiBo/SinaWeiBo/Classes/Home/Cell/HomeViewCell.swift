@@ -63,7 +63,7 @@ class HomeViewCell: UITableViewCell {
             let picViewSize = calculatePicViewSize(count: viewModel.picURLs.count)
             picViewWCons.constant = picViewSize.width
             picViewHCons.constant = picViewSize.height
-            
+            //配图数据
             picCollectionView.picURLs = viewModel.picURLs
         }
     }
@@ -76,9 +76,6 @@ class HomeViewCell: UITableViewCell {
         //微博正文宽度约束
 //        contentLabelWCons.constant = UIScreen.main.bounds.width - 2 * edgeMargin
         
-        let layout = picCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        let imageWH = (UIScreen.main.bounds.width - 2 * edgeMargin - 2 * itemMargin) / 3.0
-        layout.itemSize = CGSize(width: imageWH, height: imageWH)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -97,9 +94,22 @@ extension HomeViewCell {
             return CGSize.zero
         }
         
+        let layout = picCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        //一张配图
+        if count == 1 {
+            let urlString = viewModel?.picURLs.last?.absoluteString
+            let image = SDWebImageManager.shared().imageCache?.imageFromDiskCache(forKey: urlString)
+            
+            let size = CGSize(width: (image?.size.width)! * 2, height: (image?.size.height)! * 2)
+            layout.itemSize = size
+            
+            return size
+        }
         //计算imageWH
         let imageWH = (UIScreen.main.bounds.width - 2 * edgeMargin - 2 * itemMargin) / 3.0
-        
+        layout.itemSize = CGSize(width: imageWH, height: imageWH)
+
         //四张配图
         if count == 4 {
             let picWH = imageWH * 2 + itemMargin
