@@ -31,12 +31,18 @@ class HomeViewCell: UITableViewCell {
     @IBOutlet weak var iconImageView: UIImageView!
     //配图view
     @IBOutlet weak var picCollectionView: PicCollectionView!
+    //转发微博正文
+    @IBOutlet weak var retweetedContentLabel: UILabel!
     
+    @IBOutlet weak var retweetedBgView: UIView!
+    @IBOutlet weak var bottomToolView: UIView!
     
     //MARK: - 约束属性
     @IBOutlet weak var picViewWCons: NSLayoutConstraint!
     @IBOutlet weak var picViewHCons: NSLayoutConstraint!
 //    @IBOutlet weak var contentLabelWCons: NSLayoutConstraint!
+    @IBOutlet weak var retweetedLabelTopCons: NSLayoutConstraint!
+    @IBOutlet weak var picViewBottomCons: NSLayoutConstraint!
     
     var viewModel : StatusViewModel? {
         didSet {
@@ -65,6 +71,36 @@ class HomeViewCell: UITableViewCell {
             picViewHCons.constant = picViewSize.height
             //配图数据
             picCollectionView.picURLs = viewModel.picURLs
+        
+            //设置转发微博的正文
+            if viewModel.status?.retweeted_status != nil {
+                if let screenName = viewModel.status?.retweeted_status?.user?.screen_name,
+                    let retweetedText = viewModel.status?.retweeted_status?.text {
+                    retweetedContentLabel.text = "@" + "\(screenName):" + retweetedText
+                
+                    //有转发正文,顶部约束15
+                    retweetedLabelTopCons.constant = 15
+                }
+                //设置背景显示
+                retweetedBgView.isHidden = false
+            }
+            else
+            {
+                retweetedContentLabel.text = nil
+                //隐藏灰色背景
+                retweetedBgView.isHidden = true
+                
+                //没有转发正文,顶部约束0
+                retweetedLabelTopCons.constant = 0
+            }
+            
+            if viewModel.cellHeight == 0 {
+                //强制布局
+                layoutIfNeeded()
+                //cell高度赋值
+                viewModel.cellHeight = bottomToolView.frame.maxY
+            }
+            
         }
     }
     
@@ -91,8 +127,12 @@ extension HomeViewCell {
     fileprivate func calculatePicViewSize(count : Int) -> CGSize {
         //没有配图
         if count == 0 {
+            //距离底部约束为0
+            picViewBottomCons.constant = 0
             return CGSize.zero
         }
+        //有配图,距离底部约束为10
+        picViewBottomCons.constant = 10
         
         let layout = picCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         

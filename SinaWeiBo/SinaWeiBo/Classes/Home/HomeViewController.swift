@@ -37,7 +37,7 @@ class HomeViewController: BaseViewController {
         loadStatuses()
         
         //设置cell自动适配高度
-        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 150
     }
 
@@ -95,7 +95,7 @@ extension HomeViewController {
                 let status = Status(dict: statusDict)
                 let viewModel = StatusViewModel(status: status)
                 self.viewModels.append(viewModel)
-                dprint("来源:\(viewModel.sourceText!)----时间:\(viewModel.createAtText!)----博主:\((viewModel.status?.user?.screen_name)!)")
+//                print("来源:\(viewModel.sourceText!)----时间:\(viewModel.createAtText!)----博主:\((viewModel.status?.user?.screen_name)!)")
             }
             
             //刷新tableView
@@ -137,5 +137,13 @@ extension HomeViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        let viewModel = viewModels[indexPath.row]
+        
+        return viewModel.cellHeight
+    }
+    
 }
 

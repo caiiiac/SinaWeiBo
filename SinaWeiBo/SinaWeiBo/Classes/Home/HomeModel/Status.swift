@@ -20,6 +20,8 @@ class Status: NSObject {
     var user : User?
     //微博配图
     var pic_urls : [[String : String]]?
+    //转发的微博
+    var retweeted_status : Status?
     
     
     
@@ -31,6 +33,10 @@ class Status: NSObject {
         //用户字典转model
         if let userDict = dict["user"] as? [String : Any] {
             user = User(dict: userDict)
+        }
+        //将转发的微博字典转成model
+        if let retweetedStatusDict = dict["retweeted_status"] as? [String : Any] {
+            retweeted_status = Status(dict: retweetedStatusDict)
         }
     }
     

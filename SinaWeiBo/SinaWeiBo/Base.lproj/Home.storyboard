@@ -63,13 +63,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微博" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahF-1e-kfC">
-                                            <rect key="frame" x="15" y="65" width="337" height="43"/>
+                                            <rect key="frame" x="15" y="65" width="337" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ye-nw-c3v">
-                                            <rect key="frame" x="0.0" y="228" width="375" height="40"/>
+                                            <rect key="frame" x="0.0" y="196" width="375" height="40"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1K-bB-87B">
                                                     <rect key="frame" x="0.0" y="1" width="125" height="32"/>
@@ -141,12 +141,16 @@
                                                 <constraint firstItem="1bt-S1-vaV" firstAttribute="leading" secondItem="bEz-ZU-zDZ" secondAttribute="leading" id="vjW-Y2-GEA"/>
                                             </constraints>
                                         </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZBg-iY-Eof">
+                                            <rect key="frame" x="0.0" y="91" width="375" height="105"/>
+                                            <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                        </view>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="k1A-Zr-44K" customClass="PicCollectionView" customModule="SinaWeiBo" customModuleProvider="target">
-                                            <rect key="frame" x="15" y="118" width="240" height="100"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <rect key="frame" x="15" y="126" width="240" height="60"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="240" id="Oq5-cM-kkC"/>
-                                                <constraint firstAttribute="height" constant="100" id="qcU-ZN-XP3"/>
+                                                <constraint firstAttribute="height" constant="60" id="qcU-ZN-XP3"/>
                                             </constraints>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QsI-9D-O0W">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -179,23 +183,35 @@
                                                 </collectionViewCell>
                                             </cells>
                                         </collectionView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="转发微博" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ga4-zx-CzB">
+                                            <rect key="frame" x="15" y="98" width="337" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="k1A-Zr-44K" firstAttribute="leading" secondItem="KzV-pF-MVg" secondAttribute="leading" id="1iW-63-edG"/>
+                                        <constraint firstItem="ZBg-iY-Eof" firstAttribute="leading" secondItem="8d3-c5-nFi" secondAttribute="leading" id="4RN-ZI-rTa"/>
+                                        <constraint firstItem="4Ye-nw-c3v" firstAttribute="top" secondItem="ZBg-iY-Eof" secondAttribute="bottom" id="871-fa-akr"/>
                                         <constraint firstItem="cac-eb-5Jy" firstAttribute="leading" secondItem="KzV-pF-MVg" secondAttribute="trailing" constant="15" id="CJZ-pN-NMb"/>
                                         <constraint firstItem="ahF-1e-kfC" firstAttribute="top" secondItem="dFU-ST-245" secondAttribute="bottom" constant="15" id="CPk-LW-czb"/>
                                         <constraint firstItem="mVZ-X0-fYx" firstAttribute="leading" secondItem="cac-eb-5Jy" secondAttribute="leading" id="DDb-Ck-NaB"/>
+                                        <constraint firstAttribute="trailing" secondItem="ZBg-iY-Eof" secondAttribute="trailing" id="Gur-yn-Ohx"/>
                                         <constraint firstItem="mVZ-X0-fYx" firstAttribute="bottom" secondItem="KzV-pF-MVg" secondAttribute="bottom" id="IHS-Ka-hQg"/>
                                         <constraint firstItem="KzV-pF-MVg" firstAttribute="top" secondItem="8d3-c5-nFi" secondAttribute="top" constant="10" id="Lsn-YC-T4F"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ga4-zx-CzB" secondAttribute="trailing" constant="15" id="Msg-fn-AHE"/>
                                         <constraint firstItem="igT-Rb-OQa" firstAttribute="leading" secondItem="mVZ-X0-fYx" secondAttribute="trailing" constant="10" id="NQ2-c0-Xsq"/>
                                         <constraint firstItem="KzV-pF-MVg" firstAttribute="leading" secondItem="8d3-c5-nFi" secondAttribute="leading" constant="15" id="Q9b-13-q8n"/>
                                         <constraint firstItem="hkf-XC-7qJ" firstAttribute="centerY" secondItem="cac-eb-5Jy" secondAttribute="centerY" id="b7a-3r-LSY"/>
+                                        <constraint firstItem="k1A-Zr-44K" firstAttribute="top" secondItem="ga4-zx-CzB" secondAttribute="bottom" constant="10" id="bOu-XN-M6F"/>
                                         <constraint firstItem="4Ye-nw-c3v" firstAttribute="leading" secondItem="8d3-c5-nFi" secondAttribute="leading" id="czO-yq-6S2"/>
                                         <constraint firstAttribute="trailing" secondItem="4Ye-nw-c3v" secondAttribute="trailing" id="dWd-Ls-j2h"/>
                                         <constraint firstItem="dFU-ST-245" firstAttribute="bottom" secondItem="KzV-pF-MVg" secondAttribute="bottom" id="dlc-Cd-rdz"/>
-                                        <constraint firstAttribute="bottom" secondItem="4Ye-nw-c3v" secondAttribute="bottom" id="ebW-Ev-VWC"/>
+                                        <constraint firstItem="ZBg-iY-Eof" firstAttribute="top" secondItem="ahF-1e-kfC" secondAttribute="bottom" constant="8" id="ezn-rq-sCW"/>
                                         <constraint firstItem="dFU-ST-245" firstAttribute="trailing" secondItem="KzV-pF-MVg" secondAttribute="trailing" id="f54-ea-LMU"/>
-                                        <constraint firstItem="k1A-Zr-44K" firstAttribute="top" secondItem="ahF-1e-kfC" secondAttribute="bottom" constant="10" id="pr7-rE-0YB"/>
+                                        <constraint firstItem="ga4-zx-CzB" firstAttribute="leading" secondItem="KzV-pF-MVg" secondAttribute="leading" id="f95-hj-54i"/>
+                                        <constraint firstItem="ga4-zx-CzB" firstAttribute="top" secondItem="ahF-1e-kfC" secondAttribute="bottom" constant="15" id="nbB-CB-CAf"/>
                                         <constraint firstItem="hkf-XC-7qJ" firstAttribute="leading" secondItem="cac-eb-5Jy" secondAttribute="trailing" constant="10" id="t7o-Yr-Icx"/>
                                         <constraint firstItem="cac-eb-5Jy" firstAttribute="top" secondItem="KzV-pF-MVg" secondAttribute="top" id="tEa-B3-yHM"/>
                                         <constraint firstItem="igT-Rb-OQa" firstAttribute="top" secondItem="mVZ-X0-fYx" secondAttribute="top" id="tlH-eO-nfB"/>
@@ -205,11 +221,16 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="bottomToolView" destination="4Ye-nw-c3v" id="8ty-PC-z1d"/>
                                     <outlet property="contentLabel" destination="ahF-1e-kfC" id="dhV-5C-GEy"/>
                                     <outlet property="iconImageView" destination="KzV-pF-MVg" id="Edv-0N-hvJ"/>
                                     <outlet property="picCollectionView" destination="k1A-Zr-44K" id="wKk-FJ-b7o"/>
+                                    <outlet property="picViewBottomCons" destination="wtd-IT-Ww0" id="3u6-8e-bd7"/>
                                     <outlet property="picViewHCons" destination="qcU-ZN-XP3" id="hpE-DW-Cjf"/>
                                     <outlet property="picViewWCons" destination="Oq5-cM-kkC" id="cEf-hL-VA1"/>
+                                    <outlet property="retweetedBgView" destination="ZBg-iY-Eof" id="u5Q-2L-6Uo"/>
+                                    <outlet property="retweetedContentLabel" destination="ga4-zx-CzB" id="gfm-23-QYy"/>
+                                    <outlet property="retweetedLabelTopCons" destination="nbB-CB-CAf" id="mSW-nZ-8zi"/>
                                     <outlet property="screenNameLabel" destination="cac-eb-5Jy" id="crH-5q-qv6"/>
                                     <outlet property="sourceLabel" destination="igT-Rb-OQa" id="t0y-4V-Rzr"/>
                                     <outlet property="timeLabel" destination="mVZ-X0-fYx" id="1bJ-YP-htc"/>
