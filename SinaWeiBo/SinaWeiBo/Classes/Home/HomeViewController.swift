@@ -39,6 +39,7 @@ class HomeViewController: BaseViewController {
         
         //设置上拉下拉
         setupHeaderView()
+        setupFooterView()
         
         //设置cell自动适配高度
 //        tableView.rowHeight = UITableViewAutomaticDimension
@@ -73,6 +74,10 @@ extension HomeViewController {
         //进入刷新状态
         tableView.mj_header.beginRefreshing()
     }
+    
+    fileprivate func setupFooterView() {
+        tableView.mj_footer = MJRefreshAutoFooter(refreshingTarget: self, refreshingAction: #selector(HomeViewController.loadMoreStatus))
+    }
 }
 
 //MARK: - 事件监听
@@ -98,21 +103,34 @@ extension HomeViewController{
 
 //MARK: - 数据请求
 extension HomeViewController {
+    //加载最新数据
     @objc fileprivate func loadNewStatus() {
         loadStatuses(isNewData: true)
     }
+    //加载更多数据
+    @objc fileprivate func loadMoreStatus() {
+        loadStatuses(isNewData: false)
+    }
     
+    //加载微博数据
     fileprivate func loadStatuses(isNewData : Bool) {
         
         //获取since_id
         var since_id = 0
+        var max_id = 0
+        
         if isNewData {
             since_id = viewModels.first?.status?.mid ?? 0
             print(since_id)
         }
+        else
+        {
+            max_id = viewModels.last?.status?.mid ?? 0
+            max_id = max_id == 0 ? 0 : (max_id - 1)
+        }
         
         //请求数据
-        SANNetworkManager.shareInstance.loadStatuses(since_id: since_id) { (result, error) in
+        SANNetworkManager.shareInstance.loadStatuses(since_id: since_id, max_id : max_id) { (result, error) in
             if error != nil {
                 return
             }
@@ -129,14 +147,15 @@ extension HomeViewController {
                 tempViewModel.append(viewModel)
 
             }
-            self.viewModels = tempViewModel + self.viewModels
+            
+            self.viewModels = isNewData ?  (tempViewModel + self.viewModels) : (self.viewModels + tempViewModel)
             
             //刷新tableView
 //            self.tableView.reloadData()
-            self.cacheImages(viewModels: self.viewModels)
+            self.cacheImages(viewModels: tempViewModel)
         }
     }
-    
+    //缓存图片
     fileprivate func cacheImages(viewModels : [StatusViewModel]) {
         //创建group
         let group = DispatchGroup()
@@ -152,7 +171,9 @@ extension HomeViewController {
         //刷新表格
         group.notify(queue: DispatchQueue.main) {
             self.tableView.reloadData()
+           
             self.tableView.mj_header.endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
         }
     }
 }
