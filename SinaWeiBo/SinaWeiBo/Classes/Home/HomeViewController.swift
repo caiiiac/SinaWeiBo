@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import MJRefresh
 
 class HomeViewController: BaseViewController {
 
@@ -34,7 +35,10 @@ class HomeViewController: BaseViewController {
         //设置导航
         setupNavigationBar()
         //请求数据
-        loadStatuses()
+//        loadStatuses()
+        
+        //设置上拉下拉
+        setupHeaderView()
         
         //设置cell自动适配高度
 //        tableView.rowHeight = UITableViewAutomaticDimension
@@ -45,6 +49,7 @@ class HomeViewController: BaseViewController {
 
 //MARK: - 设置UI
 extension HomeViewController {
+    //导航
     fileprivate func setupNavigationBar() {
         
         //左右item
@@ -55,6 +60,18 @@ extension HomeViewController {
         titleBtn.setTitle("红茶绅士", for: .normal)
         titleBtn.addTarget(self, action: #selector(HomeViewController.titleBtnClick), for: .touchUpInside)
         navigationItem.titleView = titleBtn
+    }
+    //下拉控件
+    fileprivate func setupHeaderView() {
+        let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(HomeViewController.loadNewStatus))
+//        header?.setTitle("下拉刷新", for: .idle)
+//        header?.setTitle("释放更新", for: .pulling)
+//        header?.setTitle("加载中...", for: .refreshing)
+        
+        //设置header
+        tableView.mj_header = header
+        //进入刷新状态
+        tableView.mj_header.beginRefreshing()
     }
 }
 
@@ -81,8 +98,21 @@ extension HomeViewController{
 
 //MARK: - 数据请求
 extension HomeViewController {
-    fileprivate func loadStatuses() {
-        SANNetworkManager.shareInstance.loadStatuses { (result, error) in
+    @objc fileprivate func loadNewStatus() {
+        loadStatuses(isNewData: true)
+    }
+    
+    fileprivate func loadStatuses(isNewData : Bool) {
+        
+        //获取since_id
+        var since_id = 0
+        if isNewData {
+            since_id = viewModels.first?.status?.mid ?? 0
+            print(since_id)
+        }
+        
+        //请求数据
+        SANNetworkManager.shareInstance.loadStatuses(since_id: since_id) { (result, error) in
             if error != nil {
                 return
             }
@@ -90,13 +120,16 @@ extension HomeViewController {
             guard let resultArray = result else {
                 return
             }
+            
             //添加数据到Array
+            var tempViewModel = [StatusViewModel]()
             for statusDict in resultArray {
                 let status = Status(dict: statusDict)
                 let viewModel = StatusViewModel(status: status)
-                self.viewModels.append(viewModel)
-//                print("来源:\(viewModel.sourceText!)----时间:\(viewModel.createAtText!)----博主:\((viewModel.status?.user?.screen_name)!)")
+                tempViewModel.append(viewModel)
+
             }
+            self.viewModels = tempViewModel + self.viewModels
             
             //刷新tableView
 //            self.tableView.reloadData()
@@ -119,6 +152,7 @@ extension HomeViewController {
         //刷新表格
         group.notify(queue: DispatchQueue.main) {
             self.tableView.reloadData()
+            self.tableView.mj_header.endRefreshing()
         }
     }
 }

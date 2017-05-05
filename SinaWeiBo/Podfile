@@ -11,6 +11,7 @@ target 'SinaWeiBo' do
     pod 'SDWebImage'
     pod 'SnapKit'
     pod 'SVProgressHUD'
+    pod 'MJRefresh'
 
   target 'SinaWeiBoTests' do
     inherit! :search_paths
