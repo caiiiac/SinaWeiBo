@@ -40,7 +40,32 @@ extension MainViewController {
         
         //设置位置
         composeBtn.center = CGPoint(x: tabBar.center.x, y: tabBar.bounds.size.height * 0.5)
-        
+     
+        composeBtn.addTarget(self, action: #selector(MainViewController.composeBtnClick), for: .touchUpInside)
     }
     
+}
+
+//MARK: - 事件监听
+extension MainViewController {
+    //发布按钮
+    @objc fileprivate func composeBtnClick() {
+        //判断是否登录
+        guard UserAccountManager.shareInstance.isLogin else {
+            let oauthVc = OAuthViewController()
+            
+            let oauthNav = UINavigationController(rootViewController: oauthVc)
+            
+            present(oauthNav, animated: true, completion: nil)
+
+            return
+        }
+        //有登录,跳转发布微博
+        let composeVC = ComposeViewController()
+        
+        let composeNav = UINavigationController.init(rootViewController: composeVC)
+        present(composeNav, animated: true, completion: nil)
+        
+        
+    }
 }

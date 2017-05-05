@@ -10,26 +10,36 @@ import UIKit
 
 class ComposeViewController: UIViewController {
 
+    fileprivate lazy var titleView : ComposeTitleView = ComposeTitleView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        //设置导航
+        setupNavigationBar()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+}
+
+extension ComposeViewController {
+    fileprivate func setupNavigationBar() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "关闭", style: .plain, target: self, action: #selector(ComposeViewController.closeItemClick))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "发送", style: .plain, target: self, action: #selector(ComposeViewController.sendItemClick))
+        navigationItem.rightBarButtonItem?.isEnabled = false
+        
+        titleView.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
+        
+        navigationItem.titleView = titleView
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension ComposeViewController {
+    @objc fileprivate func closeItemClick() {
+        dismiss(animated: true, completion: nil)
     }
-    */
-
+    @objc fileprivate func sendItemClick() {
+        
+    }
 }

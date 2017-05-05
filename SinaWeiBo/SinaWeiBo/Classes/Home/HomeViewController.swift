@@ -137,7 +137,6 @@ extension HomeViewController {
         
         if isNewData {
             since_id = viewModels.first?.status?.mid ?? 0
-            print(since_id)
         }
         else
         {
