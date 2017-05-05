@@ -23,7 +23,7 @@ class ComposeTitleView: UIView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("")
+        super.init(coder: aDecoder)
     }
 }
 

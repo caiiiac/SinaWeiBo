@@ -10,6 +10,7 @@ import UIKit
 
 class ComposeViewController: UIViewController {
 
+    @IBOutlet weak var composeTextView: ComposeTextView!
     fileprivate lazy var titleView : ComposeTitleView = ComposeTitleView()
     
     override func viewDidLoad() {
@@ -20,9 +21,14 @@ class ComposeViewController: UIViewController {
         setupNavigationBar()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        composeTextView.becomeFirstResponder()
+    }
 
 }
-
+//MARK: - UI
 extension ComposeViewController {
     fileprivate func setupNavigationBar() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "关闭", style: .plain, target: self, action: #selector(ComposeViewController.closeItemClick))
@@ -35,11 +41,24 @@ extension ComposeViewController {
     }
 }
 
+//MARK: - 事件监听
 extension ComposeViewController {
     @objc fileprivate func closeItemClick() {
         dismiss(animated: true, completion: nil)
     }
     @objc fileprivate func sendItemClick() {
         
+    }
+}
+
+//MARK: - UITextViewDelegate
+extension ComposeViewController : UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        self.composeTextView.placeHolderLabel.isHidden = textView.hasText
+        navigationItem.rightBarButtonItem?.isEnabled = textView.hasText
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        composeTextView.resignFirstResponder()
     }
 }

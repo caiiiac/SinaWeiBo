@@ -43,6 +43,7 @@
 		26ADA7C31EBCAE7900F0EBA4 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ADA7C11EBCAE7900F0EBA4 /* ComposeViewController.swift */; };
 		26ADA7C41EBCAE7900F0EBA4 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26ADA7C21EBCAE7900F0EBA4 /* ComposeViewController.xib */; };
 		26ADA7C61EBCB11A00F0EBA4 /* ComposeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ADA7C51EBCB11A00F0EBA4 /* ComposeTitleView.swift */; };
+		26ADA7C81EBCB97300F0EBA4 /* ComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ADA7C71EBCB97300F0EBA4 /* ComposeTextView.swift */; };
 		26BF010F1EA3567C00651A97 /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF010E1EA3567C00651A97 /* UIButton-Extension.swift */; };
 		26F4E4931EA851B300CCEF57 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F4E4921EA851B300CCEF57 /* BaseViewController.swift */; };
 		26F4E4951EA852CD00CCEF57 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F4E4941EA852CD00CCEF57 /* VisitorView.swift */; };
@@ -118,6 +119,7 @@
 		26ADA7C11EBCAE7900F0EBA4 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		26ADA7C21EBCAE7900F0EBA4 /* ComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
 		26ADA7C51EBCB11A00F0EBA4 /* ComposeTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTitleView.swift; sourceTree = "<group>"; };
+		26ADA7C71EBCB97300F0EBA4 /* ComposeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTextView.swift; sourceTree = "<group>"; };
 		26BF010E1EA3567C00651A97 /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 		26F4E4921EA851B300CCEF57 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		26F4E4941EA852CD00CCEF57 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 				26ADA7C11EBCAE7900F0EBA4 /* ComposeViewController.swift */,
 				26ADA7C21EBCAE7900F0EBA4 /* ComposeViewController.xib */,
 				26ADA7C51EBCB11A00F0EBA4 /* ComposeTitleView.swift */,
+				26ADA7C71EBCB97300F0EBA4 /* ComposeTextView.swift */,
 			);
 			path = Compose;
 			sourceTree = "<group>";
@@ -719,6 +722,7 @@
 				265F8C5A1EAF2B5600596251 /* ProfileNetwork.swift in Sources */,
 				26F4E49B1EA8981300CCEF57 /* SANTitleButton.swift in Sources */,
 				26F4E4A21EA8ADD300CCEF57 /* SANPresentationController.swift in Sources */,
+				26ADA7C81EBCB97300F0EBA4 /* ComposeTextView.swift in Sources */,
 				265F8C561EAF1ACA00596251 /* SANNetworkManager.swift in Sources */,
 				2662CEFB1EAAFC8900A1788C /* PopoverAnimator.swift in Sources */,
 				269B9ED11EB1CFAA00F0E191 /* Status.swift in Sources */,
