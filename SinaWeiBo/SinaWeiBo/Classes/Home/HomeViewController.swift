@@ -19,7 +19,8 @@ class HomeViewController: BaseViewController {
     fileprivate lazy var popoverAnimator : PopoverAnimator = PopoverAnimator {[weak self] (isPresented) in
         self!.titleBtn.isSelected = isPresented
     }
-    
+    //显示更新条数
+    fileprivate lazy var tipLabel : UILabel = UILabel()
     fileprivate lazy var viewModels : [StatusViewModel] = [StatusViewModel]()
     
     override func viewDidLoad() {
@@ -34,6 +35,7 @@ class HomeViewController: BaseViewController {
         }
         //设置导航
         setupNavigationBar()
+
         //请求数据
 //        loadStatuses()
         
@@ -41,6 +43,7 @@ class HomeViewController: BaseViewController {
         setupHeaderView()
         setupFooterView()
         
+        setupTipLabel()
         //设置cell自动适配高度
 //        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 150
@@ -74,9 +77,22 @@ extension HomeViewController {
         //进入刷新状态
         tableView.mj_header.beginRefreshing()
     }
-    
+    //上拉控件
     fileprivate func setupFooterView() {
         tableView.mj_footer = MJRefreshAutoFooter(refreshingTarget: self, refreshingAction: #selector(HomeViewController.loadMoreStatus))
+    }
+    
+    //提示Label
+    fileprivate func setupTipLabel () {
+        
+        navigationController?.navigationBar.insertSubview(tipLabel, at: 0)
+        
+        tipLabel.frame = CGRect(x: 0, y: 44, width: UIScreen.main.bounds.width, height: 0)
+        tipLabel.backgroundColor = UIColor.orange
+        tipLabel.textColor = UIColor.white
+        tipLabel.textAlignment = .center
+        tipLabel.font = UIFont.systemFont(ofSize: 14)
+//        tipLabel.isHidden = true
     }
 }
 
@@ -174,6 +190,23 @@ extension HomeViewController {
            
             self.tableView.mj_header.endRefreshing()
             self.tableView.mj_footer.endRefreshing()
+            
+            self.showTipLabel(count: viewModels.count)
+        }
+    }
+    //显示TipLabe
+    fileprivate func showTipLabel(count : Int) {
+        tipLabel.isHidden = false
+        tipLabel.text = count == 0 ? "没有新数据" : "\(count)条新微博"
+        
+        UIView.animate(withDuration: 0.6, animations: {
+            self.tipLabel.frame.size.height = 32
+        }) { (_) in
+            UIView.animate(withDuration: 0.6, delay: 1.0, options: [], animations: {
+                self.tipLabel.frame.size.height = 0
+            }, completion: { (_) in
+                self.tipLabel.isHidden = true
+            })
         }
     }
 }
