@@ -13,6 +13,8 @@ class ComposeViewController: UIViewController {
     @IBOutlet weak var composeTextView: ComposeTextView!
     //工具栏约束
     @IBOutlet weak var toolBarBottomCons: NSLayoutConstraint!
+    //图片选择高度约束
+    @IBOutlet weak var picPicerViewHCons: NSLayoutConstraint!
     
     fileprivate lazy var titleView : ComposeTitleView = ComposeTitleView()
     
@@ -38,6 +40,7 @@ class ComposeViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
 
+
 }
 //MARK: - UI
 extension ComposeViewController {
@@ -55,13 +58,27 @@ extension ComposeViewController {
 
 //MARK: - 事件监听
 extension ComposeViewController {
+    //关闭按钮
     @objc fileprivate func closeItemClick() {
         dismiss(animated: true, completion: nil)
     }
+    //发布按钮
     @objc fileprivate func sendItemClick() {
         
     }
     
+    @IBAction func picPickerBtnClick(_ sender: Any) {
+        //收回键盘
+        composeTextView.resignFirstResponder()
+        
+        //显示图片选择
+        picPicerViewHCons.constant = UIScreen.main.bounds.height * 0.65
+        UIView.animate(withDuration: 0.5) { 
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    //键盘通知事件
     @objc fileprivate func keyboardWillChangeFrame(note : NSNotification) {
         //获取动画执行时间
         let duration = note.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval

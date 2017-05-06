@@ -18,6 +18,7 @@
 		265F8C5A1EAF2B5600596251 /* ProfileNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265F8C591EAF2B5600596251 /* ProfileNetwork.swift */; };
 		266289D11EB9C00D003CC49B /* PicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266289D01EB9C00D003CC49B /* PicCollectionView.swift */; };
 		2662CEFB1EAAFC8900A1788C /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2662CEFA1EAAFC8900A1788C /* PopoverAnimator.swift */; };
+		266891251EBE0D8900EE2CAD /* PicPickerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266891241EBE0D8900EE2CAD /* PicPickerCollectionView.swift */; };
 		26832E881EA256B3006E088D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26832E871EA256B3006E088D /* MainViewController.swift */; };
 		26832E8F1EA25A26006E088D /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26832E8E1EA25A26006E088D /* MessageViewController.swift */; };
 		26832E911EA25A45006E088D /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26832E901EA25A45006E088D /* DiscoverViewController.swift */; };
@@ -88,6 +89,7 @@
 		265F8C591EAF2B5600596251 /* ProfileNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNetwork.swift; sourceTree = "<group>"; };
 		266289D01EB9C00D003CC49B /* PicCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicCollectionView.swift; sourceTree = "<group>"; };
 		2662CEFA1EAAFC8900A1788C /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
+		266891241EBE0D8900EE2CAD /* PicPickerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicPickerCollectionView.swift; sourceTree = "<group>"; };
 		26832E871EA256B3006E088D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		26832E8E1EA25A26006E088D /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		26832E901EA25A45006E088D /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +197,14 @@
 				269B9EC51EB06BB800F0E191 /* UserAccountManager.swift */,
 			);
 			path = OAuth;
+			sourceTree = "<group>";
+		};
+		266891231EBE0D6200EE2CAD /* picPicker */ = {
+			isa = PBXGroup;
+			children = (
+				266891241EBE0D8900EE2CAD /* PicPickerCollectionView.swift */,
+			);
+			path = picPicker;
 			sourceTree = "<group>";
 		};
 		269B9EC71EB0701900F0E191 /* Welcome */ = {
@@ -346,6 +356,7 @@
 		26ADA7C01EBCAE5D00F0EBA4 /* Compose */ = {
 			isa = PBXGroup;
 			children = (
+				266891231EBE0D6200EE2CAD /* picPicker */,
 				26ADA7C11EBCAE7900F0EBA4 /* ComposeViewController.swift */,
 				26ADA7C21EBCAE7900F0EBA4 /* ComposeViewController.xib */,
 				26ADA7C51EBCB11A00F0EBA4 /* ComposeTitleView.swift */,
@@ -726,6 +737,7 @@
 				265F8C561EAF1ACA00596251 /* SANNetworkManager.swift in Sources */,
 				2662CEFB1EAAFC8900A1788C /* PopoverAnimator.swift in Sources */,
 				269B9ED11EB1CFAA00F0E191 /* Status.swift in Sources */,
+				266891251EBE0D8900EE2CAD /* PicPickerCollectionView.swift in Sources */,
 				26ADA7C61EBCB11A00F0EBA4 /* ComposeTitleView.swift in Sources */,
 				26832E8F1EA25A26006E088D /* MessageViewController.swift in Sources */,
 				26F4E4931EA851B300CCEF57 /* BaseViewController.swift in Sources */,
