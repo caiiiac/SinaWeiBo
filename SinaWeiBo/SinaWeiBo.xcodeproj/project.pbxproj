@@ -34,6 +34,8 @@
 		269B9ED11EB1CFAA00F0E191 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269B9ED01EB1CFAA00F0E191 /* Status.swift */; };
 		269B9ED31EB2DFA600F0E191 /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269B9ED21EB2DFA600F0E191 /* NSDate-Extension.swift */; };
 		269B9ED51EB2EB5900F0E191 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269B9ED41EB2EB5900F0E191 /* User.swift */; };
+		269BAE701EBF0B1600DBF34C /* PicPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269BAE6E1EBF0B1600DBF34C /* PicPickerViewCell.swift */; };
+		269BAE711EBF0B1600DBF34C /* PicPickerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 269BAE6F1EBF0B1600DBF34C /* PicPickerViewCell.xib */; };
 		26AC67571EA20AAB006C9B61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AC67561EA20AAB006C9B61 /* AppDelegate.swift */; };
 		26AC675C1EA20AAB006C9B61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26AC675A1EA20AAB006C9B61 /* Main.storyboard */; };
 		26AC675E1EA20AAB006C9B61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26AC675D1EA20AAB006C9B61 /* Assets.xcassets */; };
@@ -105,6 +107,8 @@
 		269B9ED01EB1CFAA00F0E191 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		269B9ED21EB2DFA600F0E191 /* NSDate-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
 		269B9ED41EB2EB5900F0E191 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		269BAE6E1EBF0B1600DBF34C /* PicPickerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicPickerViewCell.swift; sourceTree = "<group>"; };
+		269BAE6F1EBF0B1600DBF34C /* PicPickerViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PicPickerViewCell.xib; sourceTree = "<group>"; };
 		26AC67531EA20AAB006C9B61 /* SinaWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26AC67561EA20AAB006C9B61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26AC675B1EA20AAB006C9B61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -203,6 +207,8 @@
 			isa = PBXGroup;
 			children = (
 				266891241EBE0D8900EE2CAD /* PicPickerCollectionView.swift */,
+				269BAE6E1EBF0B1600DBF34C /* PicPickerViewCell.swift */,
+				269BAE6F1EBF0B1600DBF34C /* PicPickerViewCell.xib */,
 			);
 			path = picPicker;
 			sourceTree = "<group>";
@@ -544,6 +550,7 @@
 				26832EA41EA25D86006E088D /* Message.storyboard in Resources */,
 				26F4E4A01EA8A51600CCEF57 /* PopoverViewController.xib in Resources */,
 				269B9ECB1EB0706100F0E191 /* WelcomeViewController.xib in Resources */,
+				269BAE711EBF0B1600DBF34C /* PicPickerViewCell.xib in Resources */,
 				26AC675C1EA20AAB006C9B61 /* Main.storyboard in Resources */,
 				265F8C521EAEF20C00596251 /* OAuthViewController.xib in Resources */,
 				26832EA11EA25D6C006E088D /* Home.storyboard in Resources */,
@@ -737,6 +744,7 @@
 				265F8C561EAF1ACA00596251 /* SANNetworkManager.swift in Sources */,
 				2662CEFB1EAAFC8900A1788C /* PopoverAnimator.swift in Sources */,
 				269B9ED11EB1CFAA00F0E191 /* Status.swift in Sources */,
+				269BAE701EBF0B1600DBF34C /* PicPickerViewCell.swift in Sources */,
 				266891251EBE0D8900EE2CAD /* PicPickerCollectionView.swift in Sources */,
 				26ADA7C61EBCB11A00F0EBA4 /* ComposeTitleView.swift in Sources */,
 				26832E8F1EA25A26006E088D /* MessageViewController.swift in Sources */,

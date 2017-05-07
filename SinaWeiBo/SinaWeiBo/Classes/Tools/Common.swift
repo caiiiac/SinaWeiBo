@@ -12,3 +12,7 @@ import Foundation
 let app_key = "3113705381"
 let app_secret = "58227f16beae92b0133425e2dafb09e2"
 let redirect_uri = "http://caiiiac.github.io"
+
+
+//MARK: - 通知常量
+let PicPickerAddPhotoNote = "PicPickerAddPhotoNote"

@@ -10,9 +10,26 @@ import UIKit
 
 class PicPickerViewCell: UICollectionViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var addPhotoBtn: UIButton!
+    
+    var image : UIImage? {
+        didSet {
+            if image != nil {
+                addPhotoBtn.setBackgroundImage(image, for: .normal)
+                addPhotoBtn.isUserInteractionEnabled = false
+                
+            }
+            else
+            {
+                addPhotoBtn.setBackgroundImage(UIImage(named : "compose_pic_add"), for: .normal)
+                addPhotoBtn.isUserInteractionEnabled = true
+            }
+        }
     }
-
+    
+    @IBAction func addPhotoClick(_ sender: Any) {
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: PicPickerAddPhotoNote), object: nil)
+    }
+    
 }

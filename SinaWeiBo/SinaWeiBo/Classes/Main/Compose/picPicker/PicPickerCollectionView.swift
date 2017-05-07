@@ -12,6 +12,13 @@ fileprivate let picIdentifier = "picPickerCell"
 fileprivate let edgeMargin : CGFloat = 12
 
 class PicPickerCollectionView: UICollectionView {
+    
+    var images : [UIImage] = [UIImage]() {
+        didSet {
+            reloadData()
+        }
+    }
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,7 +31,7 @@ class PicPickerCollectionView: UICollectionView {
         layout.minimumLineSpacing = edgeMargin
         
         //设置collectionView属性
-        register(UICollectionViewCell.self, forCellWithReuseIdentifier: picIdentifier)
+        register(UINib(nibName : "PicPickerViewCell", bundle : nil), forCellWithReuseIdentifier: picIdentifier)
         dataSource = self
         
         //设置内边距
@@ -37,14 +44,14 @@ class PicPickerCollectionView: UICollectionView {
 extension PicPickerCollectionView : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return images.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: picIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: picIdentifier, for: indexPath) as! PicPickerViewCell
         
-        cell.backgroundColor = UIColor.yellow
-        
+        cell.image = indexPath.item <= images.count - 1 ? images[indexPath.row] : nil
+                
         return cell
     }
 }

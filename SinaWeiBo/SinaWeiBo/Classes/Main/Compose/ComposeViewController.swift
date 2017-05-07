@@ -16,7 +16,13 @@ class ComposeViewController: UIViewController {
     //图片选择高度约束
     @IBOutlet weak var picPicerViewHCons: NSLayoutConstraint!
     
+    //选择图片数组
+    fileprivate var images : [UIImage] = [UIImage]()
+    
     fileprivate lazy var titleView : ComposeTitleView = ComposeTitleView()
+    
+    @IBOutlet weak var picPickerCollectionView: PicPickerCollectionView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +30,8 @@ class ComposeViewController: UIViewController {
         // Do any additional setup after loading the view.
         //设置导航
         setupNavigationBar()
-        
-        //监听键盘通知
-        NotificationCenter.default.addObserver(self, selector: #selector(ComposeViewController.keyboardWillChangeFrame(note:)), name: .UIKeyboardWillChangeFrame, object: nil)
-
+        //添加通知
+        setupNotifications()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -54,11 +58,20 @@ extension ComposeViewController {
         
         navigationItem.titleView = titleView
     }
+    
+    fileprivate func setupNotifications() {
+        //监听键盘通知
+        NotificationCenter.default.addObserver(self, selector: #selector(ComposeViewController.keyboardWillChangeFrame(note:)), name: .UIKeyboardWillChangeFrame, object: nil)
+        //添加图片通知
+        NotificationCenter.default.addObserver(self, selector: #selector(ComposeViewController.addPhotoClick), name: NSNotification.Name(rawValue: PicPickerAddPhotoNote), object: nil)
+    }
+    
 }
 
 //MARK: - 事件监听
 extension ComposeViewController {
-    //关闭按钮
+    
+//关闭按钮
     @objc fileprivate func closeItemClick() {
         dismiss(animated: true, completion: nil)
     }
@@ -97,6 +110,35 @@ extension ComposeViewController {
         }
         
         
+    }
+}
+
+//MARK: - 添加删除图片事件
+extension ComposeViewController {
+    @objc fileprivate func addPhotoClick () {
+        //判断数据源是否可用
+        if !UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            return
+        }
+        
+        //创建
+        let ipc = UIImagePickerController()
+        ipc.sourceType = .photoLibrary
+        ipc.delegate = self
+        present(ipc, animated: true, completion: nil)
+        
+    }
+}
+
+extension ComposeViewController : UIImagePickerControllerDelegate , UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        //获取选中照片
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        images.append(image)
+        picPickerCollectionView.images = images
+        print(images)
+        picker.dismiss(animated: true, completion: nil)
     }
 }
 
