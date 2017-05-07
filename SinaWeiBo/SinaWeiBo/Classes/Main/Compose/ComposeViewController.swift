@@ -64,6 +64,9 @@ extension ComposeViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(ComposeViewController.keyboardWillChangeFrame(note:)), name: .UIKeyboardWillChangeFrame, object: nil)
         //添加图片通知
         NotificationCenter.default.addObserver(self, selector: #selector(ComposeViewController.addPhotoClick), name: NSNotification.Name(rawValue: PicPickerAddPhotoNote), object: nil)
+        //删除图片通知
+        NotificationCenter.default.addObserver(self, selector: #selector(ComposeViewController.removePhotoClick(noti:)), name: NSNotification.Name(rawValue: PicPickerRemovePhotoNote), object: nil)
+        
     }
     
 }
@@ -121,11 +124,28 @@ extension ComposeViewController {
             return
         }
         
-        //创建
+        //创建图片选择控制器
         let ipc = UIImagePickerController()
         ipc.sourceType = .photoLibrary
         ipc.delegate = self
         present(ipc, animated: true, completion: nil)
+        
+    }
+    
+    @objc fileprivate func removePhotoClick(noti : NSNotification) {
+        
+        //获取image对象
+        guard let image = noti.object as? UIImage else {
+            return
+        }
+        
+        guard let index = images.index(of: image) else {
+            return
+        }
+        //删除图片
+        images.remove(at: index)
+        //选择图片重新赋值
+        picPickerCollectionView.images = images
         
     }
 }
