@@ -18,10 +18,12 @@ class ComposeViewController: UIViewController {
     
     //选择图片数组
     fileprivate var images : [UIImage] = [UIImage]()
-    
+    //自定义titleView
     fileprivate lazy var titleView : ComposeTitleView = ComposeTitleView()
-    
+    //选中的图片
     @IBOutlet weak var picPickerCollectionView: PicPickerCollectionView!
+    //表情键盘
+    fileprivate lazy var emoticonVc : EmotionViewController = EmotionViewController()
     
     
     override func viewDidLoad() {
@@ -82,7 +84,7 @@ extension ComposeViewController {
     @objc fileprivate func sendItemClick() {
         
     }
-    
+    //选择图片
     @IBAction func picPickerBtnClick(_ sender: Any) {
         //收回键盘
         composeTextView.resignFirstResponder()
@@ -92,6 +94,16 @@ extension ComposeViewController {
         UIView.animate(withDuration: 0.5) { 
             self.view.layoutIfNeeded()
         }
+    }
+    
+    //表情
+    @IBAction func emoticonBtnClick(_ sender: Any) {
+        //退出键盘
+        composeTextView.resignFirstResponder()
+        //切换键盘
+        composeTextView.inputView = composeTextView.inputView != nil ? nil : emoticonVc.view
+        //弹出键盘
+        composeTextView.becomeFirstResponder()
     }
     
     //键盘通知事件

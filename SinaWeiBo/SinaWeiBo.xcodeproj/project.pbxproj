@@ -19,6 +19,7 @@
 		266289D11EB9C00D003CC49B /* PicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266289D01EB9C00D003CC49B /* PicCollectionView.swift */; };
 		2662CEFB1EAAFC8900A1788C /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2662CEFA1EAAFC8900A1788C /* PopoverAnimator.swift */; };
 		266891251EBE0D8900EE2CAD /* PicPickerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266891241EBE0D8900EE2CAD /* PicPickerCollectionView.swift */; };
+		267D99201EC0B93600F9F4ED /* EmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267D991F1EC0B93600F9F4ED /* EmotionViewController.swift */; };
 		26832E881EA256B3006E088D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26832E871EA256B3006E088D /* MainViewController.swift */; };
 		26832E8F1EA25A26006E088D /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26832E8E1EA25A26006E088D /* MessageViewController.swift */; };
 		26832E911EA25A45006E088D /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26832E901EA25A45006E088D /* DiscoverViewController.swift */; };
@@ -92,6 +93,7 @@
 		266289D01EB9C00D003CC49B /* PicCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicCollectionView.swift; sourceTree = "<group>"; };
 		2662CEFA1EAAFC8900A1788C /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 		266891241EBE0D8900EE2CAD /* PicPickerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicPickerCollectionView.swift; sourceTree = "<group>"; };
+		267D991F1EC0B93600F9F4ED /* EmotionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionViewController.swift; sourceTree = "<group>"; };
 		26832E871EA256B3006E088D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		26832E8E1EA25A26006E088D /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		26832E901EA25A45006E088D /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
@@ -211,6 +213,14 @@
 				269BAE6F1EBF0B1600DBF34C /* PicPickerViewCell.xib */,
 			);
 			path = picPicker;
+			sourceTree = "<group>";
+		};
+		267D991E1EC0B91400F9F4ED /* emoticon */ = {
+			isa = PBXGroup;
+			children = (
+				267D991F1EC0B93600F9F4ED /* EmotionViewController.swift */,
+			);
+			path = emoticon;
 			sourceTree = "<group>";
 		};
 		269B9EC71EB0701900F0E191 /* Welcome */ = {
@@ -362,6 +372,7 @@
 		26ADA7C01EBCAE5D00F0EBA4 /* Compose */ = {
 			isa = PBXGroup;
 			children = (
+				267D991E1EC0B91400F9F4ED /* emoticon */,
 				266891231EBE0D6200EE2CAD /* picPicker */,
 				26ADA7C11EBCAE7900F0EBA4 /* ComposeViewController.swift */,
 				26ADA7C21EBCAE7900F0EBA4 /* ComposeViewController.xib */,
@@ -727,6 +738,7 @@
 				265F8C581EAF227E00596251 /* UserAccount.swift in Sources */,
 				269B9ED51EB2EB5900F0E191 /* User.swift in Sources */,
 				269B9ECE1EB1C48C00F0E191 /* HomeNetwork.swift in Sources */,
+				267D99201EC0B93600F9F4ED /* EmotionViewController.swift in Sources */,
 				26BF010F1EA3567C00651A97 /* UIButton-Extension.swift in Sources */,
 				26F4E4991EA88CAE00CCEF57 /* UIBarButtonItem+Extension.swift in Sources */,
 				264F74161EB8630E0043002F /* HomeViewCell.swift in Sources */,
