@@ -8,6 +8,22 @@
 
 import UIKit
 
-class EmoticonManager: NSObject {
+class EmoticonManager {
 
+    var packages : [EmoticonPackage] = [EmoticonPackage]()
+    
+    init() {
+        //最近表情
+        packages.append(EmoticonPackage(id: ""))
+        
+        //默认表情
+        packages.append(EmoticonPackage(id: "com.sina.default"))
+        
+        //emoji表情
+        packages.append(EmoticonPackage(id: "com.apple.emoji"))
+        
+        //浪小花表情
+        packages.append(EmoticonPackage(id: "com.sina.lxh"))
+    }
+    
 }
