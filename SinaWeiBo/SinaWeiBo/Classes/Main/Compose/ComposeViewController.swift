@@ -23,7 +23,9 @@ class ComposeViewController: UIViewController {
     //选中的图片
     @IBOutlet weak var picPickerCollectionView: PicPickerCollectionView!
     //表情键盘
-    fileprivate lazy var emoticonVc : EmotionViewController = EmotionViewController()
+    fileprivate lazy var emoticonVc : EmotionViewController = EmotionViewController {[weak self] (emotion) in
+        self?.insertEmoticonIntoTextView(emoticon: emotion)
+    }
     
     
     override func viewDidLoad() {
@@ -124,9 +126,33 @@ extension ComposeViewController {
             self.view.layoutIfNeeded()
         }
         
-        
     }
 }
+
+//MARK: - 表情点击的回调
+extension ComposeViewController {
+    //将表情插入到textView
+    fileprivate func insertEmoticonIntoTextView(emoticon : Emoticon) {
+        //空白表情
+        if emoticon.isEmpty {
+            return
+        }
+        //删除表情
+        if emoticon.isRemove {
+            composeTextView.deleteBackward()
+            return
+        }
+        
+        //emoji表情
+        if emoticon.emojiCode != nil {
+            //获取光标所在位置
+            let textRange = composeTextView.selectedTextRange!
+           //替换emoju表情
+            composeTextView.replace(textRange, withText: emoticon.emojiCode!)
+        }
+    }
+}
+
 
 //MARK: - 添加删除图片事件
 extension ComposeViewController {

@@ -13,6 +13,9 @@ fileprivate let itemTag = 50
 
 class EmotionViewController: UIViewController {
 
+    //MARK: - 属性
+    var emoticonCallBack : (_ emoticon : Emoticon) -> ()
+    
     fileprivate lazy var collectionView : UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: EmoticonCollectionViewLayout())
     fileprivate lazy var toolBar : UIToolbar = UIToolbar()
     //表情包
@@ -25,6 +28,19 @@ class EmotionViewController: UIViewController {
         
         setupUI()
         
+    }
+    
+    //MARK: - 自定义构造函数
+    //UIViewController重写init(),必须用super.init(nibName: nil, bundle: nil)
+    init(emoticonCallBack : @escaping (_ emoticon : Emoticon) -> ()) {
+        
+        self.emoticonCallBack = emoticonCallBack
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
 }
@@ -56,6 +72,7 @@ extension EmotionViewController {
     fileprivate func prepareForCollectionView() {
         collectionView.register(EmoticonCollectionViewCell.self, forCellWithReuseIdentifier: emoticonCellIdentifier)
         collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.backgroundColor = UIColor.white
       
     }
@@ -100,7 +117,7 @@ extension EmotionViewController {
 
 
 //MARK: - UICollectionViewDataSource
-extension EmotionViewController : UICollectionViewDataSource {
+extension EmotionViewController : UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return manager.packages.count
     }
@@ -117,6 +134,41 @@ extension EmotionViewController : UICollectionViewDataSource {
         cell.emoticon = emoticon
         return cell
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //取出点击的表情
+        let package = manager.packages[indexPath.section]
+        let emoticon = package.emoticons[indexPath.item]
+        
+        //将点击的表情插入最近分组中
+        insertRecentlyEmoticon(emotion: emoticon)
+ 
+        //回调表情点击事件
+        emoticonCallBack(emoticon)
+    }
+    
+    //将点击的表情插入最近分组
+    fileprivate func insertRecentlyEmoticon(emotion : Emoticon) {
+        //点击了空白 删除不做处理
+        if emotion.isRemove || emotion.isEmpty {
+            return
+        }
+        
+        //如果之前点击过这个表情,将其移动到最前
+        if manager.packages.first!.emoticons.contains(emotion) {
+            let index = (manager.packages.first!.emoticons.index(of: emotion))!
+            manager.packages.first!.emoticons.remove(at: index)
+        }
+        //最近分组没有刚点击的表情
+        else
+        {
+            manager.packages.first!.emoticons.remove(at: 19)
+        }
+        
+        //插入将点击的表情
+        manager.packages.first!.emoticons.insert(emotion, at: 0)
+        collectionView.reloadSections([0])
     }
 }
 

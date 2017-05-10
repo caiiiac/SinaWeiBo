@@ -10,6 +10,7 @@ import UIKit
 
 class EmoticonCollectionViewCell: UICollectionViewCell {
     
+    
     fileprivate lazy var emoticonBtn : UIButton = UIButton()
     
     var emoticon : Emoticon? {
