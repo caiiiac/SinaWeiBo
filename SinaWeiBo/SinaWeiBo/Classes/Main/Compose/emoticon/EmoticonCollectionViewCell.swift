@@ -17,8 +17,18 @@ class EmoticonCollectionViewCell: UICollectionViewCell {
             guard let emoticon = emoticon else {
                 return
             }
+            
+            guard !emoticon.isEmpty else {
+                emoticonBtn.setImage(nil, for: .normal)
+                emoticonBtn.setTitle("", for: .normal)
+                return
+            }
             emoticonBtn.setImage(UIImage(contentsOfFile: emoticon.pngPath ?? ""), for: .normal)
             emoticonBtn.setTitle(emoticon.emojiCode, for: .normal)
+            
+            if emoticon.isRemove {
+                emoticonBtn.setImage(UIImage(named: "compose_emotion_delete"), for: .normal)
+            }
         }
     }
     

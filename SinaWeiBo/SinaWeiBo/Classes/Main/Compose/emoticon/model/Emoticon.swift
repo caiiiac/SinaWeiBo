@@ -44,6 +44,8 @@ class Emoticon: NSObject {
     //MARK: - 计算属性
     var pngPath : String?
     var emojiCode : String?
+    var isRemove : Bool = false
+    var isEmpty : Bool = false
     
     
     //MARK: - 自定义构造函数
@@ -52,6 +54,18 @@ class Emoticon: NSObject {
         
         setValuesForKeys(dict)
     }
+    
+    init(isRemove : Bool) {
+        super.init()
+        
+        self.isRemove = isRemove
+    }
+    
+    init(isEmpty : Bool) {
+        super.init()
+        self.isEmpty = isEmpty
+    }
+    
     override func setValue(_ value: Any?, forUndefinedKey key: String) {}
     
     
