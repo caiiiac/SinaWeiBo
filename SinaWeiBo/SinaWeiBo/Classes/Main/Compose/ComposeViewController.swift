@@ -24,7 +24,7 @@ class ComposeViewController: UIViewController {
     @IBOutlet weak var picPickerCollectionView: PicPickerCollectionView!
     //表情键盘
     fileprivate lazy var emoticonVc : EmotionViewController = EmotionViewController {[weak self] (emotion) in
-        self?.insertEmoticonIntoTextView(emoticon: emotion)
+        self?.composeTextView.insertEmoticon(emoticon: emotion)
     }
     
     
@@ -84,7 +84,7 @@ extension ComposeViewController {
     }
     //发布按钮
     @objc fileprivate func sendItemClick() {
-        
+        print(composeTextView.getEmoticonString())
     }
     //选择图片
     @IBAction func picPickerBtnClick(_ sender: Any) {
@@ -128,56 +128,6 @@ extension ComposeViewController {
         
     }
 }
-
-//MARK: - 表情点击的回调
-extension ComposeViewController {
-    //将表情插入到textView
-    fileprivate func insertEmoticonIntoTextView(emoticon : Emoticon) {
-        //空白表情
-        if emoticon.isEmpty {
-            return
-        }
-        //删除表情
-        if emoticon.isRemove {
-            composeTextView.deleteBackward()
-            return
-        }
-        
-        //emoji表情
-        if emoticon.emojiCode != nil {
-            //获取光标所在位置
-            let textRange = composeTextView.selectedTextRange!
-           //替换emoju表情
-            composeTextView.replace(textRange, withText: emoticon.emojiCode!)
-            
-            return
-        }
-        
-        //普通表情:图文混排
-        //根据图片路径创建属性字符串
-        let attachment = NSTextAttachment()
-        attachment.image = UIImage(contentsOfFile: emoticon.pngPath!)
-        let font = composeTextView.font!
-        attachment.bounds = CGRect(x: 0, y: -4, width: font.lineHeight, height: font.lineHeight)
-        let attrImageStr = NSAttributedString(attachment: attachment)
-        
-        //创建可变的属性字符串
-        let attMStr = NSMutableAttributedString(attributedString: composeTextView.attributedText)
-        //获取光标所在位置
-        let range = composeTextView.selectedRange
-        //替换属性字符串
-        attMStr.replaceCharacters(in: range, with: attrImageStr)
-        //将最终属性字符串赋值给textView
-        composeTextView.attributedText = attMStr
-        
-        //重置文字大小
-        composeTextView.font = font
-        //设置光标位置
-        composeTextView.selectedRange = NSMakeRange(range.location + 1, 0)
-        
-    }
-}
-
 
 //MARK: - 添加删除图片事件
 extension ComposeViewController {
