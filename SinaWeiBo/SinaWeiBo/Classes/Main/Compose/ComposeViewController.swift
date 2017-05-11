@@ -149,7 +149,32 @@ extension ComposeViewController {
             let textRange = composeTextView.selectedTextRange!
            //替换emoju表情
             composeTextView.replace(textRange, withText: emoticon.emojiCode!)
+            
+            return
         }
+        
+        //普通表情:图文混排
+        //根据图片路径创建属性字符串
+        let attachment = NSTextAttachment()
+        attachment.image = UIImage(contentsOfFile: emoticon.pngPath!)
+        let font = composeTextView.font!
+        attachment.bounds = CGRect(x: 0, y: -4, width: font.lineHeight, height: font.lineHeight)
+        let attrImageStr = NSAttributedString(attachment: attachment)
+        
+        //创建可变的属性字符串
+        let attMStr = NSMutableAttributedString(attributedString: composeTextView.attributedText)
+        //获取光标所在位置
+        let range = composeTextView.selectedRange
+        //替换属性字符串
+        attMStr.replaceCharacters(in: range, with: attrImageStr)
+        //将最终属性字符串赋值给textView
+        composeTextView.attributedText = attMStr
+        
+        //重置文字大小
+        composeTextView.font = font
+        //设置光标位置
+        composeTextView.selectedRange = NSMakeRange(range.location + 1, 0)
+        
     }
 }
 
