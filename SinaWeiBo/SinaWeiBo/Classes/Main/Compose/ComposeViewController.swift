@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ComposeViewController: UIViewController {
 
@@ -84,7 +85,25 @@ extension ComposeViewController {
     }
     //发布按钮
     @objc fileprivate func sendItemClick() {
-        print(composeTextView.getEmoticonString())
+        
+        //退出键盘
+        composeTextView.resignFirstResponder()
+        
+        //获取发送微博的文字
+        let statusText = composeTextView.getEmoticonString()
+        
+        //调用接口发送微博
+        SANNetworkManager.shareInstance.sendStatus(statusText: statusText) { (isSucceed) in
+            if !isSucceed {
+                SVProgressHUD.showError(withStatus: "发布失败")
+                return
+            }
+            
+            SVProgressHUD.showSuccess(withStatus: "发布成功")
+            self.dismiss(animated: true, completion: nil)
+            
+        }
+        
     }
     //选择图片
     @IBAction func picPickerBtnClick(_ sender: Any) {
