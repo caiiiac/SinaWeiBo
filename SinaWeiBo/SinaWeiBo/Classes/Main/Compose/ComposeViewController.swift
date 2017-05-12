@@ -92,8 +92,8 @@ extension ComposeViewController {
         //获取发送微博的文字
         let statusText = composeTextView.getEmoticonString()
         
-        //调用接口发送微博
-        SANNetworkManager.shareInstance.sendStatus(statusText: statusText) { (isSucceed) in
+        //回调的闭包
+        let finishedCallBack = { (isSucceed : Bool) in
             if !isSucceed {
                 SVProgressHUD.showError(withStatus: "发布失败")
                 return
@@ -103,7 +103,15 @@ extension ComposeViewController {
             self.dismiss(animated: true, completion: nil)
             
         }
+
         
+        //调用接口发送微博
+        if let image = images.first {
+            SANNetworkManager.shareInstance.sendStatus(statusText: statusText, image: image, isSuccess: finishedCallBack)
+            
+        } else {
+            SANNetworkManager.shareInstance.sendStatus(statusText: statusText, isSuccess: finishedCallBack)
+        }
     }
     //选择图片
     @IBAction func picPickerBtnClick(_ sender: Any) {
