@@ -58,6 +58,7 @@
 		26BF010F1EA3567C00651A97 /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF010E1EA3567C00651A97 /* UIButton-Extension.swift */; };
 		26BF50141EC5EC270047B51E /* ComposeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF50131EC5EC270047B51E /* ComposeNetwork.swift */; };
 		26E6D3A61EC709BA00EFAC75 /* FindEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E6D3A51EC709BA00EFAC75 /* FindEmoticon.swift */; };
+		26E6D3A81EC75C6600EFAC75 /* HYLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E6D3A71EC75C6600EFAC75 /* HYLabel.swift */; };
 		26F4E4931EA851B300CCEF57 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F4E4921EA851B300CCEF57 /* BaseViewController.swift */; };
 		26F4E4951EA852CD00CCEF57 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F4E4941EA852CD00CCEF57 /* VisitorView.swift */; };
 		26F4E4971EA852D900CCEF57 /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26F4E4961EA852D900CCEF57 /* VisitorView.xib */; };
@@ -147,6 +148,7 @@
 		26BF010E1EA3567C00651A97 /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 		26BF50131EC5EC270047B51E /* ComposeNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeNetwork.swift; sourceTree = "<group>"; };
 		26E6D3A51EC709BA00EFAC75 /* FindEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindEmoticon.swift; sourceTree = "<group>"; };
+		26E6D3A71EC75C6600EFAC75 /* HYLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYLabel.swift; sourceTree = "<group>"; };
 		26F4E4921EA851B300CCEF57 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		26F4E4941EA852CD00CCEF57 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		26F4E4961EA852D900CCEF57 /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 			children = (
 				26F4E4911EA8518500CCEF57 /* Visitor */,
 				26BF010D1EA3565900651A97 /* Category */,
+				26E6D3A71EC75C6600EFAC75 /* HYLabel.swift */,
 				26F4E49A1EA8981300CCEF57 /* SANTitleButton.swift */,
 				265F8C531EAEFB1000596251 /* Common.swift */,
 				265F8C551EAF1ACA00596251 /* SANNetworkManager.swift */,
@@ -806,6 +809,7 @@
 				2662CEFB1EAAFC8900A1788C /* PopoverAnimator.swift in Sources */,
 				269B9ED11EB1CFAA00F0E191 /* Status.swift in Sources */,
 				2687B4E21EC4B2CE00FE0998 /* UITextView-Extension.swift in Sources */,
+				26E6D3A81EC75C6600EFAC75 /* HYLabel.swift in Sources */,
 				269BAE701EBF0B1600DBF34C /* PicPickerViewCell.swift in Sources */,
 				263B8B681EC2012E006C8D50 /* EmoticonManager.swift in Sources */,
 				263B8B6E1EC20BFD006C8D50 /* EmoticonCollectionViewCell.swift in Sources */,

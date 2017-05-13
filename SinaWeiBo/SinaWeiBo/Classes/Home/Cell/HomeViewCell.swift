@@ -16,7 +16,7 @@ class HomeViewCell: UITableViewCell {
 
     //MARK: - 属性
     //正文
-    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var contentLabel: HYLabel!
     //来源
     @IBOutlet weak var sourceLabel: UILabel!
     //时间
@@ -32,7 +32,7 @@ class HomeViewCell: UITableViewCell {
     //配图view
     @IBOutlet weak var picCollectionView: PicCollectionView!
     //转发微博正文
-    @IBOutlet weak var retweetedContentLabel: UILabel!
+    @IBOutlet weak var retweetedContentLabel: HYLabel!
     
     @IBOutlet weak var retweetedBgView: UIView!
     @IBOutlet weak var bottomToolView: UIView!
