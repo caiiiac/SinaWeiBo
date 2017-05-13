@@ -63,7 +63,8 @@ class HomeViewCell: UITableViewCell {
             //来源
             sourceLabel.text = viewModel.sourceText
             //微博正文
-            contentLabel.text = viewModel.status?.text
+//            contentLabel.text = viewModel.status?.text
+            contentLabel.attributedText = FindEmoticon.shareIntance.findAttrString(statusText: viewModel.status?.text, font: contentLabel.font)
             
             //计算picView的宽高
             let picViewSize = calculatePicViewSize(count: viewModel.picURLs.count)
@@ -76,8 +77,9 @@ class HomeViewCell: UITableViewCell {
             if viewModel.status?.retweeted_status != nil {
                 if let screenName = viewModel.status?.retweeted_status?.user?.screen_name,
                     let retweetedText = viewModel.status?.retweeted_status?.text {
-                    retweetedContentLabel.text = "@" + "\(screenName):" + retweetedText
-                
+                    
+                    let retText = "@" + "\(screenName):" + retweetedText
+                    retweetedContentLabel.attributedText = FindEmoticon.shareIntance.findAttrString(statusText: retText, font: retweetedContentLabel.font)
                     //有转发正文,顶部约束15
                     retweetedLabelTopCons.constant = 15
                 }
