@@ -165,7 +165,7 @@ extension HYLabel {
         }
         
         // 5.匹配@用户
-        if let userRanges = getRanges("@[\\u4e00-\\u9fa5a-zA-Z0-9_-]*") {
+        if let userRanges = getRanges("@[\\u4e00-\\u9fa5a-zA-Z0-9_-]*$") {
             self.userRanges = userRanges
             for range in userRanges {
                 textStorage.addAttribute(NSForegroundColorAttributeName, value: matchTextColor, range: range)
