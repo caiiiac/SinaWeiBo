@@ -165,7 +165,7 @@ extension HYLabel {
         }
         
         // 5.匹配@用户
-        if let userRanges = getRanges("@[\\u4e00-\\u9fa5a-zA-Z0-9_-]*$") {
+        if let userRanges = getRanges("@[\\u4e00-\\u9fa5a-zA-Z0-9_-]*") {
             self.userRanges = userRanges
             for range in userRanges {
                 textStorage.addAttribute(NSForegroundColorAttributeName, value: matchTextColor, range: range)
@@ -198,12 +198,14 @@ extension HYLabel {
     }
     
     fileprivate func getLinkRanges() -> [NSRange]? {
-        // 创建正则表达式
-        guard let detector = try? NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue) else {
+        // 创建正则表达式  匹配URL
+        let pattern = "((http|ftp|https)://)(([a-zA-Z0-9\\._-]+\\.[a-zA-Z]{2,6})|([0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}))(:[0-9]{1,4})*(/[a-zA-Z0-9\\&%_\\./-~-]*)?"
+        
+        guard let regex = try? NSRegularExpression(pattern: pattern, options: []) else {
             return nil
         }
         
-        return getRangesFromResult(detector)
+        return getRangesFromResult(regex)
     }
     
     fileprivate func getRangesFromResult(_ regex : NSRegularExpression) -> [NSRange] {
