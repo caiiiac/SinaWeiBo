@@ -47,6 +47,12 @@ class HomeViewController: BaseViewController {
         //设置cell自动适配高度
 //        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 150
+        
+        setupNotification()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
 }
@@ -96,6 +102,11 @@ extension HomeViewController {
         tipLabel.font = UIFont.systemFont(ofSize: 14)
 //        tipLabel.isHidden = true
     }
+    
+    //监听通知
+    fileprivate func setupNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.showPhotoBrowser(note:)), name: NSNotification.Name(rawValue: ShowPhotoBrowserNote), object: nil)
+    }
 }
 
 //MARK: - 事件监听
@@ -115,6 +126,18 @@ extension HomeViewController{
         
         //弹出控制器
         present(popoverVC, animated: true, completion: nil)
+        
+    }
+    
+    //图片浏览器通知事件
+    @objc fileprivate func showPhotoBrowser(note : Notification) {
+        //获取数据
+        let indexPath = note.userInfo![ShowPhotoBrowserIndexKey] as! NSIndexPath
+        let picURLs = note.userInfo![ShowPhotoBrowserUrlsKey] as! [URL]
+        
+        //创建图片浏览器
+        let photoBrowserVc = PhotoBrowserViewController(indexPath: indexPath, picURLs: picURLs)
+        present(photoBrowserVc, animated: true, completion: nil)
         
     }
 }

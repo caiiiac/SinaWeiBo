@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		260B3DAB1EA2651A002BEC96 /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260B3DA91EA2651A002BEC96 /* Null.storyboard */; };
+		26362C961EC9DE0200BC1A15 /* PhotoBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26362C951EC9DE0200BC1A15 /* PhotoBrowserViewController.swift */; };
 		263B8B651EC200CC006C8D50 /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 263B8B641EC200CC006C8D50 /* Emoticons.bundle */; };
 		263B8B681EC2012E006C8D50 /* EmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B8B671EC2012E006C8D50 /* EmoticonManager.swift */; };
 		263B8B6A1EC20165006C8D50 /* EmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B8B691EC20165006C8D50 /* EmoticonPackage.swift */; };
@@ -92,6 +93,7 @@
 /* Begin PBXFileReference section */
 		0AE674DF7EDA632A14DDAD61 /* Pods-SinaWeiBoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWeiBoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWeiBoTests/Pods-SinaWeiBoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		260B3DAA1EA2651A002BEC96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Null.storyboard; sourceTree = "<group>"; };
+		26362C951EC9DE0200BC1A15 /* PhotoBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserViewController.swift; sourceTree = "<group>"; };
 		263B8B641EC200CC006C8D50 /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
 		263B8B671EC2012E006C8D50 /* EmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonManager.swift; sourceTree = "<group>"; };
 		263B8B691EC20165006C8D50 /* EmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonPackage.swift; sourceTree = "<group>"; };
@@ -203,6 +205,14 @@
 				B148B58612FFDD3DA8C14C59 /* Pods_SinaWeiBoUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		26362C941EC9DDE600BC1A15 /* PhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				26362C951EC9DE0200BC1A15 /* PhotoBrowserViewController.swift */,
+			);
+			path = PhotoBrowser;
 			sourceTree = "<group>";
 		};
 		263B8B661EC20104006C8D50 /* model */ = {
@@ -364,6 +374,7 @@
 		26AC67861EA20EBA006C9B61 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				26362C941EC9DDE600BC1A15 /* PhotoBrowser */,
 				269B9ECF1EB1CDA400F0E191 /* HomeModel */,
 				269B9ECC1EB1C45700F0E191 /* API */,
 				26F4E49C1EA8A4F700CCEF57 /* Popover */,
@@ -805,6 +816,7 @@
 				2687B4E01EC4B1B300FE0998 /* EmoticonAttachment.swift in Sources */,
 				26F4E4A21EA8ADD300CCEF57 /* SANPresentationController.swift in Sources */,
 				26ADA7C81EBCB97300F0EBA4 /* ComposeTextView.swift in Sources */,
+				26362C961EC9DE0200BC1A15 /* PhotoBrowserViewController.swift in Sources */,
 				265F8C561EAF1ACA00596251 /* SANNetworkManager.swift in Sources */,
 				2662CEFB1EAAFC8900A1788C /* PopoverAnimator.swift in Sources */,
 				269B9ED11EB1CFAA00F0E191 /* Status.swift in Sources */,

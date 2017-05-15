@@ -17,3 +17,11 @@ let redirect_uri = "http://caiiiac.github.io"
 //MARK: - 通知常量
 let PicPickerAddPhotoNote = "PicPickerAddPhotoNote"
 let PicPickerRemovePhotoNote = "PicPickerRemovePhotoNote"
+
+
+//MARK: - 图片浏览器通知
+let ShowPhotoBrowserNote = "ShowPhotoBrowserNote"
+let ShowPhotoBrowserIndexKey = "ShowPhotoBrowserIndexKey"
+let ShowPhotoBrowserUrlsKey = "ShowPhotoBrowserUrlsKey"
+
+
