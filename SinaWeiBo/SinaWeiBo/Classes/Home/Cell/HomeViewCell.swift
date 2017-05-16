@@ -131,7 +131,7 @@ extension HomeViewCell {
         if count == 0 {
             //距离底部约束为0
             picViewBottomCons.constant = 0
-            return CGSize.zero
+            return .zero
         }
         //有配图,距离底部约束为10
         picViewBottomCons.constant = 10

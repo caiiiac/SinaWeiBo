@@ -111,7 +111,7 @@ open class HYLabel: UILabel {
         // 2.绘制字形
         // 需要绘制的范围
         let range = NSRange(location: 0, length: textStorage.length)
-        layoutManager.drawGlyphs(forGlyphRange: range, at: CGPoint.zero)
+        layoutManager.drawGlyphs(forGlyphRange: range, at: .zero)
     }
 }
 

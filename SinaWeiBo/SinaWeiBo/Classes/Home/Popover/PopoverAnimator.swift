@@ -12,7 +12,7 @@ class PopoverAnimator: NSObject {
 
     fileprivate var isPresented : Bool = false
     
-    var presentedFrame : CGRect = CGRect.zero
+    var presentedFrame : CGRect = .zero
     var callBack : ((Bool) -> ())
     
     //自定义构造函数 

@@ -10,7 +10,7 @@ import UIKit
 
 class SANPresentationController: UIPresentationController {
 
-    var presentedFrame : CGRect = CGRect.zero
+    var presentedFrame : CGRect = .zero
     
     fileprivate lazy var coverView : UIView = UIView()
     

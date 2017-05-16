@@ -16,7 +16,7 @@ class EmotionViewController: UIViewController {
     //MARK: - 属性
     var emoticonCallBack : (_ emoticon : Emoticon) -> ()
     
-    fileprivate lazy var collectionView : UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: EmoticonCollectionViewLayout())
+    fileprivate lazy var collectionView : UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: EmoticonCollectionViewLayout())
     fileprivate lazy var toolBar : UIToolbar = UIToolbar()
     //表情包
     fileprivate lazy var manager : EmoticonManager = EmoticonManager()
