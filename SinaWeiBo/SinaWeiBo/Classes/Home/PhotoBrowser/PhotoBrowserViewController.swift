@@ -69,8 +69,24 @@ extension PhotoBrowserViewController {
         }
         
         //设置collectionView
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: PBCellIdentifier)
+        collectionView.register(PhotoBrowserCollectionViewCell.self, forCellWithReuseIdentifier: PBCellIdentifier)
         collectionView.dataSource = self
+        
+        //监听按钮点击
+        closeBtn.addTarget(self, action: #selector(PhotoBrowserViewController.closeBtnClick), for: .touchUpInside)
+        saveBtn.addTarget(self, action: #selector(PhotoBrowserViewController.saveBtnClick), for: .touchUpInside)
+    }
+}
+
+//MARK: - 事件监听
+extension PhotoBrowserViewController {
+    //关闭按钮
+    @objc fileprivate func closeBtnClick() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @objc fileprivate func saveBtnClick() {
+        
     }
 }
 
@@ -81,9 +97,10 @@ extension PhotoBrowserViewController : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PBCellIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PBCellIdentifier, for: indexPath) as! PhotoBrowserCollectionViewCell
         
-        cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.blue
+        cell.picURL = picURLs[indexPath.item]
+        
         return cell
     }
 }
