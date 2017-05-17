@@ -37,6 +37,8 @@ class PhotoBrowserCollectionViewCell: UICollectionViewCell {
             //设置imageView的图片
             imageView.image = image
             
+            //设置contentSize
+            scrollView.contentSize = CGSize(width: 0, height: height)
         }
     }
     
