@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import SVProgressHUD
 
 let PBCellIdentifier = "PhotoBrowserCell"
 
@@ -96,6 +97,26 @@ extension PhotoBrowserViewController {
     }
     
     @objc fileprivate func saveBtnClick() {
+        
+        //获取当前正在显示的image
+        let cell = collectionView.visibleCells.first as! PhotoBrowserCollectionViewCell
+        guard let image = cell.imageView.image else {
+            return
+        }
+        
+        //将image保存到相册
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(PhotoBrowserViewController.image(image:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    
+    @objc fileprivate func image(image : UIImage, didFinishSavingWithError error : Error?, contextInfo : Any) {
+        var showInfo = ""
+        if error != nil {
+            showInfo = "保存失败"
+        } else {
+            showInfo = "保存成功"
+        }
+        
+        SVProgressHUD.showInfo(withStatus: showInfo)
         
     }
 }

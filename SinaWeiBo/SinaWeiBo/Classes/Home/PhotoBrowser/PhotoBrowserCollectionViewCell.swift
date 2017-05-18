@@ -24,9 +24,8 @@ class PhotoBrowserCollectionViewCell: UICollectionViewCell {
     
     var delegate : PhotoBrowserViewCellDelegate?
     
-    
+    lazy var imageView : UIImageView = UIImageView()
     fileprivate lazy var scrollView : UIScrollView = UIScrollView()
-    fileprivate lazy var imageView : UIImageView = UIImageView()
     //下载进度View
     fileprivate lazy var progressView : ProgressView = ProgressView()
     
