@@ -42,7 +42,17 @@ class PhotoBrowserViewController: UIViewController {
         // Do any additional setup after loading the view.
         view.backgroundColor = UIColor.white
         
+        //设置UI
         setupUI()
+        
+        //滚动到对应的图片
+        collectionView.scrollToItem(at: indexPath as IndexPath, at: .left, animated: false)
+    }
+    
+    override func loadView() {
+        super.loadView()
+        
+        view.bounds.size.width += 15
     }
 }
 
@@ -100,11 +110,18 @@ extension PhotoBrowserViewController : UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PBCellIdentifier, for: indexPath) as! PhotoBrowserCollectionViewCell
         
         cell.picURL = picURLs[indexPath.item]
+        cell.delegate = self
         
         return cell
     }
 }
 
+//MARK: - PhotoBrowserViewCellDelegate
+extension PhotoBrowserViewController : PhotoBrowserViewCellDelegate {
+    func imageViewClick() {
+        closeBtnClick()
+    }
+}
 
 class PhotoBrowserCollectionViewLayout: UICollectionViewFlowLayout {
     override func prepare() {
