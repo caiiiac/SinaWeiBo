@@ -53,7 +53,7 @@ class PhotoBrowserViewController: UIViewController {
     override func loadView() {
         super.loadView()
         
-        view.bounds.size.width += 15
+        view.frame.size.width += 15
     }
 }
 
@@ -74,7 +74,7 @@ extension PhotoBrowserViewController {
         }
         
         saveBtn.snp.makeConstraints { (make) in
-            make.right.equalTo(-20)
+            make.right.equalTo(-35)
             make.bottom.equalTo(closeBtn.snp.bottom)
             make.size.equalTo(closeBtn.snp.size)
         }

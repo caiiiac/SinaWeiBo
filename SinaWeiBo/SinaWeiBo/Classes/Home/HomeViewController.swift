@@ -22,6 +22,8 @@ class HomeViewController: BaseViewController {
     //显示更新条数
     fileprivate lazy var tipLabel : UILabel = UILabel()
     fileprivate lazy var viewModels : [StatusViewModel] = [StatusViewModel]()
+    //自定义动画
+    fileprivate lazy var photoBrowserAnimator : PhotoBrowserAnimator = PhotoBrowserAnimator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -137,6 +139,9 @@ extension HomeViewController{
         
         //创建图片浏览器
         let photoBrowserVc = PhotoBrowserViewController(indexPath: indexPath, picURLs: picURLs)
+        //设置modal类型
+        photoBrowserVc.modalPresentationStyle = .custom
+        photoBrowserVc.transitioningDelegate = photoBrowserAnimator
         present(photoBrowserVc, animated: true, completion: nil)
         
     }
