@@ -8,11 +8,25 @@
 
 import UIKit
 
+
+//协议
+protocol AnimatorPresentedDelegate : NSObjectProtocol {
+    func startRect(indexPath : NSIndexPath) -> CGRect
+    func endRect(indexPath : NSIndexPath) -> CGRect
+    func imageView(indexPath : NSIndexPath) -> UIImageView
+}
+
+
 class PhotoBrowserAnimator: NSObject {
 
     var isPresented : Bool = false
+    var presentedDelegate : AnimatorPresentedDelegate?
+    var indexPath : NSIndexPath?
+    
     
 }
+
+
 
 extension PhotoBrowserAnimator : UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
@@ -36,17 +50,32 @@ extension PhotoBrowserAnimator : UIViewControllerAnimatedTransitioning {
     }
     
     func animationForPresentedView(using transitionContext: UIViewControllerContextTransitioning) {
+        
+        guard let presentedDelegate = presentedDelegate, let indexPath = indexPath else {
+            return
+        }
+        
         //取出弹出的View
         let presentedView = transitionContext.view(forKey: .to)!
         
         //将presentedView添加到containerView
         transitionContext.containerView.addSubview(presentedView)
         
+        //获取动画imageView
+        let startRect = presentedDelegate.startRect(indexPath: indexPath)
+        let imageView = presentedDelegate.imageView(indexPath: indexPath)
+        transitionContext.containerView.addSubview(imageView)
+        imageView.frame = startRect
+        
         //执行动画
         presentedView.alpha = 0.0
+        transitionContext.containerView.backgroundColor = UIColor.black
         UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: { 
-            presentedView.alpha = 1.0
+            imageView.frame = presentedDelegate.endRect(indexPath: indexPath)
         }) { (_) in
+            imageView.removeFromSuperview()
+            presentedView.alpha = 1.0
+            transitionContext.containerView.backgroundColor = UIColor.clear
             transitionContext.completeTransition(true)
         }
         
