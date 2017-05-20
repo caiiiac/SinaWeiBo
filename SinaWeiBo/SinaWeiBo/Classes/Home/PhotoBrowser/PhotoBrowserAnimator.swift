@@ -13,7 +13,7 @@ import UIKit
 protocol AnimatorPresentedDelegate : NSObjectProtocol {
     func startRect(indexPath : NSIndexPath) -> CGRect
     func endRect(indexPath : NSIndexPath) -> CGRect
-    func imageView(indexPath : NSIndexPath) -> UIImageView
+    func imageViewForPresented(indexPath : NSIndexPath) -> UIImageView
 }
 
 
@@ -63,7 +63,7 @@ extension PhotoBrowserAnimator : UIViewControllerAnimatedTransitioning {
         
         //获取动画imageView
         let startRect = presentedDelegate.startRect(indexPath: indexPath)
-        let imageView = presentedDelegate.imageView(indexPath: indexPath)
+        let imageView = presentedDelegate.imageViewForPresented(indexPath: indexPath)
         transitionContext.containerView.addSubview(imageView)
         imageView.frame = startRect
         

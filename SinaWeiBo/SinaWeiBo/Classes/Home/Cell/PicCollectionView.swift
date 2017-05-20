@@ -84,7 +84,7 @@ extension PicCollectionView : AnimatorPresentedDelegate {
         
     }
     
-    func imageView(indexPath: NSIndexPath) -> UIImageView {
+    func imageViewForPresented(indexPath: NSIndexPath) -> UIImageView {
         //创建imageView对象
         let imageView = UIImageView()
         
