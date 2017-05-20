@@ -9,11 +9,16 @@
 import UIKit
 
 
-//协议
+//弹出动画协议
 protocol AnimatorPresentedDelegate : NSObjectProtocol {
-    func startRect(indexPath : NSIndexPath) -> CGRect
-    func endRect(indexPath : NSIndexPath) -> CGRect
-    func imageViewForPresented(indexPath : NSIndexPath) -> UIImageView
+    func startRect(indexPath : IndexPath) -> CGRect
+    func endRect(indexPath : IndexPath) -> CGRect
+    func imageViewForPresented(indexPath : IndexPath) -> UIImageView
+}
+//消失动画协议
+protocol AnimatorDismissDelegate : NSObjectProtocol {
+    func indexPathForDismiss() -> IndexPath
+    func imageViewForDismiss() -> UIImageView 
 }
 
 
@@ -21,7 +26,9 @@ class PhotoBrowserAnimator: NSObject {
 
     var isPresented : Bool = false
     var presentedDelegate : AnimatorPresentedDelegate?
-    var indexPath : NSIndexPath?
+    var dismissDelegate : AnimatorDismissDelegate?
+    
+    var indexPath : IndexPath?
     
     
 }
@@ -42,7 +49,7 @@ extension PhotoBrowserAnimator : UIViewControllerTransitioningDelegate {
 extension PhotoBrowserAnimator : UIViewControllerAnimatedTransitioning {
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 1.0
+        return 0.35
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -82,14 +89,24 @@ extension PhotoBrowserAnimator : UIViewControllerAnimatedTransitioning {
     }
     
     func animationForDismissView(using transitionContext: UIViewControllerContextTransitioning) {
+        guard let dismissDelegate = dismissDelegate, let presentedDelegate = presentedDelegate else {
+            return
+        }
+        
         //取出消失的view
         let dismissView = transitionContext.view(forKey: .from)!
+        dismissView.removeFromSuperview()
+        
+        //获取动画的imageView
+        let imageView = dismissDelegate.imageViewForDismiss()
+        transitionContext.containerView.addSubview(imageView)
+        let indexPath = dismissDelegate.indexPathForDismiss()
         
         //执行动画
         UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: { 
-            dismissView.alpha = 0.0
+            imageView.frame = presentedDelegate.startRect(indexPath: indexPath)
         }) { (_) in
-            dismissView.removeFromSuperview()
+            
             transitionContext.completeTransition(true)
         }
     }

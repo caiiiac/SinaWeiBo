@@ -134,7 +134,7 @@ extension HomeViewController{
     //图片浏览器通知事件
     @objc fileprivate func showPhotoBrowser(note : Notification) {
         //获取数据
-        let indexPath = note.userInfo![ShowPhotoBrowserIndexKey] as! NSIndexPath
+        let indexPath = note.userInfo![ShowPhotoBrowserIndexKey] as! IndexPath
         let picURLs = note.userInfo![ShowPhotoBrowserUrlsKey] as! [URL]
         let object = note.object as! PicCollectionView
         
@@ -146,7 +146,9 @@ extension HomeViewController{
         
         //设置动画代理
         photoBrowserAnimator.presentedDelegate = object
+        photoBrowserAnimator.dismissDelegate = photoBrowserVc
         photoBrowserAnimator.indexPath = indexPath
+        
         
         present(photoBrowserVc, animated: true, completion: nil)
         

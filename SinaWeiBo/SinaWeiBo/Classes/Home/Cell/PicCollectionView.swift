@@ -55,9 +55,9 @@ extension PicCollectionView : UICollectionViewDataSource, UICollectionViewDelega
 //MARK: - 自定义动画AnimatorPresentedDelegate
 extension PicCollectionView : AnimatorPresentedDelegate {
 
-    func startRect(indexPath: NSIndexPath) -> CGRect {
+    func startRect(indexPath: IndexPath) -> CGRect {
         //获取cell
-        let cell = self.cellForItem(at: indexPath as IndexPath)!
+        let cell = self.cellForItem(at: indexPath)!
         
         //获取cell的frame
         let startFrame = self.convert(cell.frame, to: UIApplication.shared.keyWindow)
@@ -65,7 +65,7 @@ extension PicCollectionView : AnimatorPresentedDelegate {
         return startFrame
     }
     
-    func endRect(indexPath: NSIndexPath) -> CGRect {
+    func endRect(indexPath: IndexPath) -> CGRect {
         //获取image对象
         let picURL = picURLs[indexPath.item]
         let image = SDWebImageManager.shared().imageCache?.imageFromDiskCache(forKey: picURL.absoluteString)
@@ -84,7 +84,7 @@ extension PicCollectionView : AnimatorPresentedDelegate {
         
     }
     
-    func imageViewForPresented(indexPath: NSIndexPath) -> UIImageView {
+    func imageViewForPresented(indexPath: IndexPath) -> UIImageView {
         //创建imageView对象
         let imageView = UIImageView()
         

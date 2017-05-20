@@ -15,7 +15,7 @@ let PBCellIdentifier = "PhotoBrowserCell"
 class PhotoBrowserViewController: UIViewController {
     
     //MARK: - 属性
-    var indexPath : NSIndexPath
+    var indexPath : IndexPath
     var picURLs : [URL]
     
     
@@ -25,7 +25,7 @@ class PhotoBrowserViewController: UIViewController {
     
     
     //MARK: - 自定义构造函数
-    init(indexPath : NSIndexPath, picURLs : [URL]) {
+    init(indexPath : IndexPath, picURLs : [URL]) {
         self.indexPath = indexPath
         self.picURLs = picURLs
         
@@ -47,7 +47,7 @@ class PhotoBrowserViewController: UIViewController {
         setupUI()
         
         //滚动到对应的图片
-        collectionView.scrollToItem(at: indexPath as IndexPath, at: .left, animated: false)
+        collectionView.scrollToItem(at: indexPath, at: .left, animated: false)
     }
     
     override func loadView() {
@@ -143,6 +143,29 @@ extension PhotoBrowserViewController : PhotoBrowserViewCellDelegate {
         closeBtnClick()
     }
 }
+
+//MARK: - 消失动画的代理 
+extension PhotoBrowserViewController : AnimatorDismissDelegate {
+    func indexPathForDismiss() -> IndexPath {
+        //获取当前正在显示的indexPath
+        let cell = collectionView.visibleCells.first!
+        
+        return collectionView.indexPath(for: cell)!
+    }
+    
+    func imageViewForDismiss() -> UIImageView {
+        //创建UIImageView对象
+        let imageView = UIImageView()
+        
+        //设置属性
+        let cell = collectionView.visibleCells.first! as! PhotoBrowserCollectionViewCell
+        imageView.frame = cell.imageView.frame
+        imageView.image = cell.imageView.image
+        
+        return imageView
+    }
+}
+
 
 class PhotoBrowserCollectionViewLayout: UICollectionViewFlowLayout {
     override func prepare() {
